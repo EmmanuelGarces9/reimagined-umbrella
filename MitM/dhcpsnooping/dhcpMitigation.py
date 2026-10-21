@@ -75,7 +75,7 @@ class mitigacionDhcp(object):
             return
 
         # si es un ack, guardamos la verdad en la tabla
-        if dhcp_packet.options.get(53) == b'\x05':
+        if dhcp_packet.msg_type == 5:
             mac_cliente = str(dhcp_packet.chaddr)
             ip_cliente = str(dhcp_packet.yiaddr)
 
@@ -90,7 +90,7 @@ class mitigacionDhcp(object):
     def _bloquear_puerto(self, connection, puerto_atacante):
         msg = of.ofp_flow_mod()
         msg.match.in_port = puerto_atacante
-        msg.priority = 2000
+        msg.priority = 39000
         connection.send(msg)
         log.error("puerto %s bloqueado por intento de ataque.", puerto_atacante)
 
