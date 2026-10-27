@@ -44,18 +44,27 @@ class switch_flowmod(app_manager.RyuApp):
             self.logger.info("enviando paquete de %s a %s por el puerto %s", mac_origen, mac_destino, puerto_salida)
             actions=[parser.OFPActionOutput(puerto_salida)]
 
-            match=parser.OFPMatch(in_port=puerto_entrada, eth_dst=mac_destino, eth_src=mac_origen)
+            match=parser.OFPMatch(in_port=puerto_entrada, eth_src=mac_origen, eth_dst=mac_destino)
             inst=[parser.OFPInstructionActions(ofp.OFPIT_APPLY_ACTIONS, actions)]
-            mod=parser.OFPFlowMod(datapath=dp, priority=1, match=match, instructions=inst)
+            mod=parser.OFPFlowMod(datapath=dp, priority=1, match=match, instructions=inst, idle_timeout=50)
             dp.send_msg(mod)
 
         else:
             self.logger.info("inundando paquete de %s a %s", mac_origen, mac_destino)
-            actions=[parser.OFPActionOutput(ofp.OFPP_FLOOD)]
-            out=parser.OFPPacketOut(datapath=dp, buffer_id=ofp.OFP_NO_BUFFER, in_port=puerto_entrada, actions=actions, data=msg.data)
-            dp.send_msg(out)
-
-
+            puerto_salida=ofp.OFPP_FLOOD
+        
+        actions=[parser.OFPActionOutput(puerto_salida)]
+        out=parser.OFPPacketOut(datapath=dp, buffer_id=ofp.OFP_NO_BUFFER, in_port=puerto_entrada, actions=actions, data=msg.data)
+        dp.send_msg(out)
+        
         if mac_origen not in self.mac_puerto:
             self.logger.info("aprendiendo la ubicación de %s en el puerto %s", mac_origen, puerto_entrada)
             self.mac_puerto[mac_origen]=puerto_entrada
+        
+        if self.mac_puerto[mac_origen] != puerto_entrada:
+            puerto_viejo=self.mac_puerto[mac_origen]
+            self.mac_puerto[mac_origen]=puerto_entrada
+            match=parser.OFPMatch(eth_dst=mac_origen)
+            dp.send_msg(parser.OFPFlowMod(datapath=dp, command=ofp.OFPFC_DELETE, out_port=puerto_viejo, out_group=ofp.OFPG_ANY, match=match))
+            self.logger.warning("%s se movió del puerto %s al %s", mac_origen, puerto_viejo, puerto_entrada)
+            
