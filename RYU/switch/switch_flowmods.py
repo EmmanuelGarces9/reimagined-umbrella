@@ -22,13 +22,15 @@ class switch_flowmod(app_manager.RyuApp):
         match=parser.OFPMatch()
         actions=[parser.OFPActionOutput(ofp.OFPP_CONTROLLER, ofp.OFPCML_NO_BUFFER)]
         inst=[parser.OFPInstructionActions(ofp.OFPIT_APPLY_ACTIONS, actions)]
-        mod=parser.OFPFlowMod(datapath=dp, priority=0, match=match, instructions=inst)
+        mod=parser.OFPFlowMod(datapath=dp, table_id=1, priority=0, match=match, instructions=inst)
         dp.send_msg(mod)
         self.logger.info("Switch %s conectado, instalando reglas", dp.id)
 
     @set_ev_cls(ofp_event.EventOFPPacketIn, MAIN_DISPATCHER)
     def _packet_in_handler(self, ev):
         msg=ev.msg
+        if msg.table_id!=1:
+            return
         dp=msg.datapath
         ofp=dp.ofproto
         parser=dp.ofproto_parser
@@ -46,7 +48,7 @@ class switch_flowmod(app_manager.RyuApp):
 
             match=parser.OFPMatch(in_port=puerto_entrada, eth_src=mac_origen, eth_dst=mac_destino)
             inst=[parser.OFPInstructionActions(ofp.OFPIT_APPLY_ACTIONS, actions)]
-            mod=parser.OFPFlowMod(datapath=dp, priority=1, match=match, instructions=inst, idle_timeout=50)
+            mod=parser.OFPFlowMod(datapath=dp, table_id=1, priority=1, match=match, instructions=inst, idle_timeout=50)
             dp.send_msg(mod)
 
         else:
@@ -65,6 +67,6 @@ class switch_flowmod(app_manager.RyuApp):
             puerto_viejo=self.mac_puerto[mac_origen]
             self.mac_puerto[mac_origen]=puerto_entrada
             match=parser.OFPMatch(eth_dst=mac_origen)
-            dp.send_msg(parser.OFPFlowMod(datapath=dp, command=ofp.OFPFC_DELETE, out_port=puerto_viejo, out_group=ofp.OFPG_ANY, match=match))
+            dp.send_msg(parser.OFPFlowMod(datapath=dp, table_id=1, command=ofp.OFPFC_DELETE, out_port=puerto_viejo, out_group=ofp.OFPG_ANY, match=match))
             self.logger.warning("%s se movió del puerto %s al %s", mac_origen, puerto_viejo, puerto_entrada)
             
