@@ -143,7 +143,7 @@ class basicmitigation(app_manager.RyuApp):
             if arpO.opcode==arp.ARP_REQUEST:
                 data_pendiente=None
             self.pendientes[ip_envia]=(mac_origen, puerto_entrada, data_pendiente)
-            self.logger.info("Ip %s no registrada, enviando verificación al puerto %s", ip_envia, puerto_entrada)
+            self.logger.info("Ip %s no registrada, enviando verificacion al puerto %s", ip_envia, puerto_entrada)
             self.enviar_verificacion(ev, ip_envia)
 
             if arpO.opcode==arp.ARP_REQUEST:
