@@ -5,6 +5,11 @@ from ryu.ofproto import ofproto_v1_3
 from ryu.lib.packet import packet, ether_types, ethernet, arp, dhcp, udp
 from ryu.lib import hub
 import time
+from collections import deque
+
+MIN=12
+factor=2
+bloq_time=300
 
 
 class flowMitigation(app_manager.RyuApp):
@@ -16,8 +21,8 @@ class flowMitigation(app_manager.RyuApp):
         self.datapaths={}
         self.prev_stats={}
         hub.spawn(self.monitoreo)
-
-
+        self.aut_ports=[1,2]
+        self.historial={}
 
     @set_ev_cls(ofp_event.EventOFPSwitchFeatures, CONFIG_DISPATCHER)
     def switch_features_handler(self, ev):
@@ -65,6 +70,8 @@ class flowMitigation(app_manager.RyuApp):
         dp_id=dp.id
         ofp=dp.ofproto
         parser=dp.ofproto_parser
+        accumulated={}
+
 
         for stats in msg.body:
             if stats.priority != 150:
@@ -83,20 +90,47 @@ class flowMitigation(app_manager.RyuApp):
                 self.logger.info("puerto: %s ---> %.2f ARP/s de tasa \n ", port, rate)
                 
                 if rate>10:
-                    bloq_time=300
-                    self.logger.warning("El puerto no autorizado %s esta mandando %.2f ARP/s, bloqueando por %s segundos", port, rate, bloq_time)
-                    match=parser.OFPMatch(in_port=port)
-                    inst=[parser.OFPInstructionActions(ofp.OFPIT_APPLY_ACTIONS, [])]
-                    bloq=parser.OFPFlowMod(datapath=dp, table_id=0, priority=200, match=match, instructions=inst, hard_timeout=bloq_time)
-                    dp.send_msg(bloq)
-                    
+                    if port in self.aut_ports:
+                        self.logger.info("Puerto %s, (autorizado), con %.2f ARP/s, no se bloquea", port, rate)
 
-                
+                    else:
+                        self.logger.warning("El puerto %s, no autorizado esta mandando %.2f ARP/s, bloqueando por %s segundos", port, rate, bloq_time)
+                        match=parser.OFPMatch(in_port=port)
+                        inst=[parser.OFPInstructionActions(ofp.OFPIT_APPLY_ACTIONS, [])]
+                        bloq=parser.OFPFlowMod(datapath=dp, table_id=0, priority=200, match=match, instructions=inst, hard_timeout=bloq_time)
+                        dp.send_msg(bloq)
             self.prev_stats[key]=(actual_time, actual_pkt_count)
-        
-        self.logger.info("\n")
+            if key not in self.historial:
+                self.historial[key]=deque(maxlen=30)
+            self.historial[key].append(actual_pkt_count)
+
+            if len(self.historial[key])==30:
+                accumulated_num=self.historial[key][-1]-self.historial[key][0]
+                accumulated[port]=accumulated_num
+
             
 
+        toEvaluate=[]
+        for port, acc in accumulated.items():
+            if port in self.aut_ports:
+                self.logger.info("Puerto %s, (autorizado), con %s ARP acumulados, no se tiene en cuenta para la mediana", port, acc)
+                continue
+            toEvaluate.append(acc)
+        if len(toEvaluate)<2:
+            return
+        toEvaluate.sort()
+        median=toEvaluate[len(toEvaluate)//2] 
+        self.logger.info("Acumulados: %s, median: %s",accumulated, median)
+        for port, acc in accumulated.items():
+            if port in self.aut_ports:
+                self.logger.info("Puerto %s, (autorizado), con %s ARP acumulados, no se va a revisar para el arpspoofing", port, acc)
+                continue
+            if acc>=MIN and acc>factor*median:
+                self.logger.warning("Puerto %s, con %s ARP acumulados, supera la mediana de %s ARP, se bloquea por %s segundos", port, acc, median, bloq_time)
+                match=parser.OFPMatch(in_port=port)
+                inst=[parser.OFPInstructionActions(ofp.OFPIT_APPLY_ACTIONS, [])]
+                bloq=parser.OFPFlowMod(datapath=dp, table_id=0, priority=200, match=match, instructions=inst, hard_timeout=bloq_time)
+                dp.send_msg(bloq)
 
 
     def monitoreo(self):
@@ -106,5 +140,3 @@ class flowMitigation(app_manager.RyuApp):
                 stats_request=parser.OFPFlowStatsRequest(dp)
                 dp.send_msg(stats_request)
             hub.sleep(1)
-
-
