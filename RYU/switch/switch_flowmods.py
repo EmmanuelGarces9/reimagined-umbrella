@@ -60,7 +60,7 @@ class switch_flowmod(app_manager.RyuApp):
         dp.send_msg(out)
         
         if mac_origen not in self.mac_puerto:
-            self.logger.info("aprendiendo la ubicación de %s en el puerto %s", mac_origen, puerto_entrada)
+            self.logger.info("aprendiendo la ubicacion de %s en el puerto %s", mac_origen, puerto_entrada)
             self.mac_puerto[mac_origen]=puerto_entrada
         
         if self.mac_puerto[mac_origen] != puerto_entrada:
@@ -68,5 +68,5 @@ class switch_flowmod(app_manager.RyuApp):
             self.mac_puerto[mac_origen]=puerto_entrada
             match=parser.OFPMatch(eth_dst=mac_origen)
             dp.send_msg(parser.OFPFlowMod(datapath=dp, table_id=1, command=ofp.OFPFC_DELETE, out_port=puerto_viejo, out_group=ofp.OFPG_ANY, match=match))
-            self.logger.warning("%s se movió del puerto %s al %s", mac_origen, puerto_viejo, puerto_entrada)
-            
+            self.logger.warning("%s se movio del puerto %s al %s", mac_origen, puerto_viejo, puerto_entrada)
+    

@@ -10,7 +10,7 @@ from collections import deque
 MIN=12
 factor=2
 bloq_time=300
-
+info=True
 
 class flowMitigation(app_manager.RyuApp):
     
@@ -87,11 +87,15 @@ class flowMitigation(app_manager.RyuApp):
                 dpkts=actual_pkt_count - before_pkt_count
                 rate=dpkts / dt
                 
-                self.logger.info("puerto: %s ---> %.2f ARP/s de tasa \n ", port, rate)
-                
+
+                if info==False: self.logger.debug("puerto: %s ---> %.2f ARP/s de tasa \n ", port, rate)
+                else: self.logger.info("puerto: %s ---> %.2f ARP/s de tasa \n ", port, rate)
+
+
                 if rate>10:
                     if port in self.aut_ports:
-                        self.logger.info("Puerto %s, (autorizado), con %.2f ARP/s, no se bloquea", port, rate)
+                        if info==False: self.logger.debug("Puerto %s, (autorizado), con %.2f ARP/s, no se bloquea", port, rate)
+                        else: self.logger.info("Puerto %s, (autorizado), con %.2f ARP/s, no se bloquea", port, rate)
 
                     else:
                         self.logger.warning("El puerto %s, no autorizado esta mandando %.2f ARP/s, bloqueando por %s segundos", port, rate, bloq_time)
@@ -113,17 +117,23 @@ class flowMitigation(app_manager.RyuApp):
         toEvaluate=[]
         for port, acc in accumulated.items():
             if port in self.aut_ports:
-                self.logger.info("Puerto %s, (autorizado), con %s ARP acumulados, no se tiene en cuenta para la mediana", port, acc)
+                if info==False: self.logger.debug("puerto %s, (autorizado), con %s arp acumulados, no se tiene en cuenta para la mediana", port, acc)
+                else: self.logger.info("puerto %s, (autorizado), con %s arp acumulados, no se tiene en cuenta para la mediana", port, acc)
+
                 continue
             toEvaluate.append(acc)
         if len(toEvaluate)<2:
             return
         toEvaluate.sort()
         median=toEvaluate[len(toEvaluate)//2] 
-        self.logger.info("Acumulados: %s, median: %s",accumulated, median)
+        if info==False: self.logger.debug("Acumulados: %s, median: %s",accumulated, median)
+        else: self.logger.info("Acumulados: %s, median: %s",accumulated, median)
+
         for port, acc in accumulated.items():
             if port in self.aut_ports:
-                self.logger.info("Puerto %s, (autorizado), con %s ARP acumulados, no se va a revisar para el arpspoofing", port, acc)
+                if info==False: self.logger.debug("Puerto %s, (autorizado), con %s ARP acumulados, no se va a revisar para el arpspoofing", port, acc)
+                else: self.logger.info("Puerto %s, (autorizado), con %s ARP acumulados, no se va a revisar para el arpspoofing", port, acc)
+
                 continue
             if acc>=MIN and acc>factor*median:
                 self.logger.warning("Puerto %s, con %s ARP acumulados, supera la mediana de %s ARP, se bloquea por %s segundos", port, acc, median, bloq_time)
