@@ -142,9 +142,9 @@ registers {
 }
 registers {
   preamble {
-    id: 383828448
-    name: "MyIngress.reg_bloqueado"
-    alias: "reg_bloqueado"
+    id: 374867577
+    name: "MyIngress.reg_blocked"
+    alias: "reg_blocked"
   }
   type_spec {
     bitstring {
@@ -154,6 +154,21 @@ registers {
     }
   }
   size: 512
+}
+registers {
+  preamble {
+    id: 379935029
+    name: "MyIngress.reg_mac_port"
+    alias: "reg_mac_port"
+  }
+  type_spec {
+    bitstring {
+      bit {
+        bitwidth: 9
+      }
+    }
+  }
+  size: 256
 }
 type_info {
 }

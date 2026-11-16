@@ -12,7 +12,7 @@ typedef bit<16> l4port_t;
 const bit<16> IPV4=0x800;
 const bit<16> ARP=0x806;
 const bit<8> UDP=17;
-
+const bit<9> SERVER_PORT=1;
 
 
 header ethernet_t {
@@ -147,8 +147,8 @@ control MyIngress(inout headers hdr,
     register<valid_t>(256)   reg_valid;      // ya se aprendio esa ip? indice=ip
     register<macType_t>(256) reg_mac;       // registro de macs reales indice=ip
     register<portType_t>(256) reg_port;     // registros de puertos reales indice=ip
-    register<valid_t>(512)   reg_bloqueado;  // ese puerto ya esta bloqueado? indice=puerto
-
+    register<valid_t>(512)   reg_blocked;  // ese puerto ya esta bloqueado? indice=puerto
+    register<portType_t>(256) reg_mac_port;
 
     action drop(){
         mark_to_drop(standard_metadata);
@@ -204,65 +204,97 @@ control MyIngress(inout headers hdr,
     }
     
     apply {
-        // puerto de entrada, como índice para reg_bloqueado
-        indexP4_t port_idx = (bit<32>) standard_metadata.ingress_port; //mapea un puerto de 9 bits a 32
+        //revisamos: esta bloqueado el puerto?
+        portType_t port=standard_metadata.ingress_port;
+        indexP4_t index_p = (bit<32>) standard_metadata.ingress_port;
         valid_t port_blocked;
-        reg_bloqueado.read(port_blocked, port_idx);
+        reg_blocked.read(port_blocked, index_p);
+        
+        bool discard=false;
 
-        bool descartar = false;
+        if (port_blocked==1){
+            discard=true;
 
-        // 1. ¿puerto bloqueado? descartar
-        if (port_blocked == 1) {
-            descartar = true;
         }
-        else if (hdr.arp.isValid()) {
-            macType_t mac_pkt = hdr.arp.sha;
-            portType_t port = standard_metadata.ingress_port;
+        else if (hdr.dhcp.isValid()){
+            indexP4_t index_m = (bit<32>) hdr.dhcp.chaddr[7:0];
 
-            // 2a. MAC de Ethernet distinta de la del ARP, primera mitigacion super basica
-            if (hdr.eth.srcAddr != mac_pkt) {
-                descartar = true;
-                reg_bloqueado.write(port_idx, 1);
+            if (hdr.udp.dstPort==67){
+                reg_mac_port.write(index_m, port);
+                standard_metadata.egress_spec=SERVER_PORT;
             }
-            // 2b. ignorar ARP probe (spa = 0.0.0.0)
-            else if (hdr.arp.spa != 0) {
-                indexP4_t index = (bit<32>) hdr.arp.spa[7:0];
-
-                valid_t learned;
-                macType_t real_mac;
-                portType_t real_port;
-                reg_valid.read(learned, index);
-
-                if (learned == 0) {
-                    // 2c. no aprendida: aprender solo de Requests
-                    if (hdr.arp.oper == 1) {
-                        reg_mac.write(index, mac_pkt);
-                        reg_port.write(index, port);
-                        reg_valid.write(index, 1);
+            else if (hdr.udp.dstPort==68){
+                if (port==SERVER_PORT){
+                    portType_t outPort;
+                    reg_mac_port.read(outPort, index_m);
+                    standard_metadata.egress_spec=outPort;
+                    if (hdr.dhcp.opt_code == 53 && hdr.dhcp.msg_type == 5){
+                        indexP4_t index_ip = (bit<32>) hdr.dhcp.yiaddr[7:0];
+                        macType_t real_mac = hdr.dhcp.chaddr;
+                        reg_mac.write(index_ip, real_mac);
+                        reg_port.write(index_ip, outPort);
+                        reg_valid.write(index_ip, 1);
                     }
-                }
-                else {
-                    // 2d. aprendida: comparar MAC y puerto
-                    reg_mac.read(real_mac, index);
-                    reg_port.read(real_port, index);
-                    if (real_mac != mac_pkt || real_port != port) {
-                        descartar = true;
-                        reg_bloqueado.write(port_idx, 1);
-                    }
+                }   
+                else{
+                    discard=true;
+                    reg_blocked.write(index_p, 1);
                 }
             }
         }
+        else if (hdr.arp.isValid()){
+            if (port != SERVER_PORT) {
+                macType_t mac_pkt = hdr.arp.sha;
 
-    // 3. decisión final
-    if (descartar) {
-        drop();
-    }
-    else if (hdr.arp.isValid() && hdr.arp.oper == 1) {
-        arp_response.apply();
-    }
-    else {
-        mac_forw.apply();
-    }
+                // 2a. MAC de Ethernet distinta de la del ARP, primera mitigacion super basica
+                if (hdr.eth.srcAddr != mac_pkt) {
+                    discard = true;
+                    reg_blocked.write(index_p, 1);
+                }
+                else if (hdr.arp.spa != 0) {
+                    indexP4_t index = (bit<32>) hdr.arp.spa[7:0];
+                    valid_t learned;
+                    macType_t real_mac;
+                    portType_t real_port;
+                    reg_valid.read(learned, index);
+
+                    if (learned == 0) {
+                        // 2c. no aprendida: host con ip estatica, descartar
+                        discard=true;
+                        reg_blocked.write(index_p, 1);
+                    }
+                    else{
+                        // 2d. aprendida: comparar MAC y puerto
+                        reg_mac.read(real_mac, index);
+                        reg_port.read(real_port, index);
+                        if (real_mac != mac_pkt || real_port != port) {
+                            discard = true;
+                            reg_blocked.write(index_p, 1);
+                        }
+                    }
+                }
+            }
+        }
+
+
+
+
+        // 3. decisión final
+        
+        if (discard) {
+            drop();
+        }
+
+        else if (hdr.dhcp.isValid()){
+            //nada, ya se conmuto los dhcp arriba
+        }
+
+        else if (hdr.arp.isValid() && hdr.arp.oper == 1) {
+            arp_response.apply();
+        }
+        else {
+            mac_forw.apply();
+        }
 }
 
 
@@ -286,6 +318,8 @@ control MyDeparser(packet_out packet, in headers hdr){
     packet.emit(hdr.eth);
     packet.emit(hdr.arp);
     packet.emit(hdr.ipv4);
+    packet.emit(hdr.udp);
+    packet.emit(hdr.dhcp);
     }
 }
 

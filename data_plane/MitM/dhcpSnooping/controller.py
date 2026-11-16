@@ -20,6 +20,7 @@ def writeRules(p4info_helper, sw):
         {"ip" : "10.0.0.1", "mac" : "00:00:00:00:00:01", "port":1},
         {"ip" : "10.0.0.2", "mac" : "00:00:00:00:00:02", "port":2},
         {"ip" : "10.0.0.3", "mac" : "00:00:00:00:00:03", "port":3},
+        {"ip" : "10.0.0.4", "mac" : "00:00:00:00:00:04", "port":4},
     ]
     for host in hosts:
 
@@ -83,8 +84,8 @@ def main(p4info_file_path, bmv2_file_path):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Controlador ARP responder')
     parser.add_argument('--p4info', type=str,
-                        default='./build/arp_responder.p4.p4info.txtpb')
+                        default='./build/dhcpsnooping.p4.p4info.txtpb')
     parser.add_argument('--bmv2-json', type=str,
-                        default='./build/arp_responder.json')
+                        default='./build/dhcpsnooping.json')
     args = parser.parse_args()
     main(args.p4info, args.bmv2_json)

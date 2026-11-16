@@ -1,10 +1,10 @@
 
-[2026-11-15 06:36:08.513] /p4.v1.P4Runtime/SetForwardingPipelineConfig
+[2026-11-16 06:32:57.405] /p4.v1.P4Runtime/SetForwardingPipelineConfig
 ---
-Message too long (62247 bytes)! Skipping log...
+Message too long (85980 bytes)! Skipping log...
 ---
 
-[2026-11-15 06:36:08.528] /p4.v1.P4Runtime/Write
+[2026-11-16 06:32:57.425] /p4.v1.P4Runtime/Write
 ---
 election_id {
   low: 1
@@ -34,7 +34,7 @@ updates {
 }
 ---
 
-[2026-11-15 06:36:08.529] /p4.v1.P4Runtime/Write
+[2026-11-16 06:32:57.426] /p4.v1.P4Runtime/Write
 ---
 election_id {
   low: 1
@@ -64,7 +64,7 @@ updates {
 }
 ---
 
-[2026-11-15 06:36:08.530] /p4.v1.P4Runtime/Write
+[2026-11-16 06:32:57.427] /p4.v1.P4Runtime/Write
 ---
 election_id {
   low: 1
@@ -94,7 +94,7 @@ updates {
 }
 ---
 
-[2026-11-15 06:36:08.531] /p4.v1.P4Runtime/Write
+[2026-11-16 06:32:57.427] /p4.v1.P4Runtime/Write
 ---
 election_id {
   low: 1
@@ -124,7 +124,7 @@ updates {
 }
 ---
 
-[2026-11-15 06:36:08.535] /p4.v1.P4Runtime/Write
+[2026-11-16 06:32:57.428] /p4.v1.P4Runtime/Write
 ---
 election_id {
   low: 1
@@ -154,7 +154,7 @@ updates {
 }
 ---
 
-[2026-11-15 06:36:08.536] /p4.v1.P4Runtime/Write
+[2026-11-16 06:32:57.429] /p4.v1.P4Runtime/Write
 ---
 election_id {
   low: 1
@@ -176,6 +176,66 @@ updates {
           params {
             param_id: 1
             value: "\000\000\000\000\000\003"
+          }
+        }
+      }
+    }
+  }
+}
+---
+
+[2026-11-16 06:32:57.429] /p4.v1.P4Runtime/Write
+---
+election_id {
+  low: 1
+}
+updates {
+  type: INSERT
+  entity {
+    table_entry {
+      table_id: 37636568
+      match {
+        field_id: 1
+        exact {
+          value: "\000\000\000\000\000\004"
+        }
+      }
+      action {
+        action {
+          action_id: 29683729
+          params {
+            param_id: 1
+            value: "\000\004"
+          }
+        }
+      }
+    }
+  }
+}
+---
+
+[2026-11-16 06:32:57.430] /p4.v1.P4Runtime/Write
+---
+election_id {
+  low: 1
+}
+updates {
+  type: INSERT
+  entity {
+    table_entry {
+      table_id: 39690190
+      match {
+        field_id: 1
+        exact {
+          value: "\n\000\000\004"
+        }
+      }
+      action {
+        action {
+          action_id: 21197892
+          params {
+            param_id: 1
+            value: "\000\000\000\000\000\004"
           }
         }
       }
