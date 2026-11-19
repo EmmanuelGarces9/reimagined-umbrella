@@ -1,10 +1,10 @@
 
-[2026-11-16 06:32:57.405] /p4.v1.P4Runtime/SetForwardingPipelineConfig
+[2026-11-19 04:33:59.163] /p4.v1.P4Runtime/SetForwardingPipelineConfig
 ---
-Message too long (85980 bytes)! Skipping log...
+Message too long (82193 bytes)! Skipping log...
 ---
 
-[2026-11-16 06:32:57.425] /p4.v1.P4Runtime/Write
+[2026-11-19 04:33:59.185] /p4.v1.P4Runtime/Write
 ---
 election_id {
   low: 1
@@ -34,37 +34,7 @@ updates {
 }
 ---
 
-[2026-11-16 06:32:57.426] /p4.v1.P4Runtime/Write
----
-election_id {
-  low: 1
-}
-updates {
-  type: INSERT
-  entity {
-    table_entry {
-      table_id: 39690190
-      match {
-        field_id: 1
-        exact {
-          value: "\n\000\000\001"
-        }
-      }
-      action {
-        action {
-          action_id: 21197892
-          params {
-            param_id: 1
-            value: "\000\000\000\000\000\001"
-          }
-        }
-      }
-    }
-  }
-}
----
-
-[2026-11-16 06:32:57.427] /p4.v1.P4Runtime/Write
+[2026-11-19 04:33:59.190] /p4.v1.P4Runtime/Write
 ---
 election_id {
   low: 1
@@ -94,37 +64,7 @@ updates {
 }
 ---
 
-[2026-11-16 06:32:57.427] /p4.v1.P4Runtime/Write
----
-election_id {
-  low: 1
-}
-updates {
-  type: INSERT
-  entity {
-    table_entry {
-      table_id: 39690190
-      match {
-        field_id: 1
-        exact {
-          value: "\n\000\000\002"
-        }
-      }
-      action {
-        action {
-          action_id: 21197892
-          params {
-            param_id: 1
-            value: "\000\000\000\000\000\002"
-          }
-        }
-      }
-    }
-  }
-}
----
-
-[2026-11-16 06:32:57.428] /p4.v1.P4Runtime/Write
+[2026-11-19 04:33:59.191] /p4.v1.P4Runtime/Write
 ---
 election_id {
   low: 1
@@ -154,37 +94,7 @@ updates {
 }
 ---
 
-[2026-11-16 06:32:57.429] /p4.v1.P4Runtime/Write
----
-election_id {
-  low: 1
-}
-updates {
-  type: INSERT
-  entity {
-    table_entry {
-      table_id: 39690190
-      match {
-        field_id: 1
-        exact {
-          value: "\n\000\000\003"
-        }
-      }
-      action {
-        action {
-          action_id: 21197892
-          params {
-            param_id: 1
-            value: "\000\000\000\000\000\003"
-          }
-        }
-      }
-    }
-  }
-}
----
-
-[2026-11-16 06:32:57.429] /p4.v1.P4Runtime/Write
+[2026-11-19 04:33:59.192] /p4.v1.P4Runtime/Write
 ---
 election_id {
   low: 1
@@ -214,7 +124,7 @@ updates {
 }
 ---
 
-[2026-11-16 06:32:57.430] /p4.v1.P4Runtime/Write
+[2026-11-19 04:33:59.193] /p4.v1.P4Runtime/Write
 ---
 election_id {
   low: 1
@@ -222,21 +132,24 @@ election_id {
 updates {
   type: INSERT
   entity {
-    table_entry {
-      table_id: 39690190
-      match {
-        field_id: 1
-        exact {
-          value: "\n\000\000\004"
+    packet_replication_engine_entry {
+      multicast_group_entry {
+        multicast_group_id: 1
+        replicas {
+          egress_port: 1
+          instance: 1
         }
-      }
-      action {
-        action {
-          action_id: 21197892
-          params {
-            param_id: 1
-            value: "\000\000\000\000\000\004"
-          }
+        replicas {
+          egress_port: 2
+          instance: 1
+        }
+        replicas {
+          egress_port: 3
+          instance: 1
+        }
+        replicas {
+          egress_port: 4
+          instance: 1
         }
       }
     }

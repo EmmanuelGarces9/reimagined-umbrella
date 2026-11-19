@@ -17,15 +17,14 @@
         ["tmp_9", 32, false],
         ["tmp_10", 32, false],
         ["tmp_11", 32, false],
-        ["who_asked_l2_0", 48, false],
-        ["who_asked_l3_0", 32, false],
         ["port_blocked_0", 1, false],
+        ["server_answer_forw_0", 1, false],
         ["discard_0", 1, false],
         ["outPort_0", 9, false],
         ["learned_0", 1, false],
         ["real_mac_1", 48, false],
         ["real_port_0", 9, false],
-        ["_padding_0", 3, false]
+        ["_padding_0", 2, false]
       ]
     },
     {
@@ -377,7 +376,7 @@
       "id" : 0,
       "source_info" : {
         "filename" : "dhcpsnooping.p4",
-        "line" : 315,
+        "line" : 292,
         "column" : 8,
         "source_fragment" : "MyDeparser"
       },
@@ -393,7 +392,7 @@
       "id" : 0,
       "source_info" : {
         "filename" : "dhcpsnooping.p4",
-        "line" : 147,
+        "line" : 148,
         "column" : 27,
         "source_fragment" : "reg_valid"
       },
@@ -405,7 +404,7 @@
       "id" : 1,
       "source_info" : {
         "filename" : "dhcpsnooping.p4",
-        "line" : 148,
+        "line" : 149,
         "column" : 29,
         "source_fragment" : "reg_mac"
       },
@@ -417,7 +416,7 @@
       "id" : 2,
       "source_info" : {
         "filename" : "dhcpsnooping.p4",
-        "line" : 149,
+        "line" : 150,
         "column" : 30,
         "source_fragment" : "reg_port"
       },
@@ -429,7 +428,7 @@
       "id" : 3,
       "source_info" : {
         "filename" : "dhcpsnooping.p4",
-        "line" : 150,
+        "line" : 151,
         "column" : 27,
         "source_fragment" : "reg_blocked"
       },
@@ -441,7 +440,7 @@
       "id" : 4,
       "source_info" : {
         "filename" : "dhcpsnooping.p4",
-        "line" : 151,
+        "line" : 152,
         "column" : 30,
         "source_fragment" : "reg_mac_port"
       },
@@ -459,10 +458,26 @@
       "primitives" : []
     },
     {
-      "name" : "NoAction",
+      "name" : "MyIngress.drop",
       "id" : 1,
       "runtime_data" : [],
-      "primitives" : []
+      "primitives" : [
+        {
+          "op" : "mark_to_drop",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "standard_metadata"
+            }
+          ],
+          "source_info" : {
+            "filename" : "dhcpsnooping.p4",
+            "line" : 155,
+            "column" : 8,
+            "source_fragment" : "mark_to_drop(standard_metadata)"
+          }
+        }
+      ]
     },
     {
       "name" : "MyIngress.drop",
@@ -479,51 +494,7 @@
           ],
           "source_info" : {
             "filename" : "dhcpsnooping.p4",
-            "line" : 154,
-            "column" : 8,
-            "source_fragment" : "mark_to_drop(standard_metadata)"
-          }
-        }
-      ]
-    },
-    {
-      "name" : "MyIngress.drop",
-      "id" : 3,
-      "runtime_data" : [],
-      "primitives" : [
-        {
-          "op" : "mark_to_drop",
-          "parameters" : [
-            {
-              "type" : "header",
-              "value" : "standard_metadata"
-            }
-          ],
-          "source_info" : {
-            "filename" : "dhcpsnooping.p4",
-            "line" : 154,
-            "column" : 8,
-            "source_fragment" : "mark_to_drop(standard_metadata)"
-          }
-        }
-      ]
-    },
-    {
-      "name" : "MyIngress.drop",
-      "id" : 4,
-      "runtime_data" : [],
-      "primitives" : [
-        {
-          "op" : "mark_to_drop",
-          "parameters" : [
-            {
-              "type" : "header",
-              "value" : "standard_metadata"
-            }
-          ],
-          "source_info" : {
-            "filename" : "dhcpsnooping.p4",
-            "line" : 154,
+            "line" : 155,
             "column" : 8,
             "source_fragment" : "mark_to_drop(standard_metadata)"
           }
@@ -532,7 +503,7 @@
     },
     {
       "name" : "MyIngress.forward",
-      "id" : 5,
+      "id" : 3,
       "runtime_data" : [
         {
           "name" : "port",
@@ -554,7 +525,7 @@
           ],
           "source_info" : {
             "filename" : "dhcpsnooping.p4",
-            "line" : 158,
+            "line" : 159,
             "column" : 8,
             "source_fragment" : "standard_metadata.egress_spec=port"
           }
@@ -562,210 +533,8 @@
       ]
     },
     {
-      "name" : "MyIngress.resolve_arp",
-      "id" : 6,
-      "runtime_data" : [
-        {
-          "name" : "asked_mac",
-          "bitwidth" : 48
-        }
-      ],
-      "primitives" : [
-        {
-          "op" : "assign",
-          "parameters" : [
-            {
-              "type" : "field",
-              "value" : ["scalars", "who_asked_l2_0"]
-            },
-            {
-              "type" : "field",
-              "value" : ["arp", "sha"]
-            }
-          ],
-          "source_info" : {
-            "filename" : "dhcpsnooping.p4",
-            "line" : 162,
-            "column" : 18,
-            "source_fragment" : "who_asked_l2=hdr.arp.sha"
-          }
-        },
-        {
-          "op" : "assign",
-          "parameters" : [
-            {
-              "type" : "field",
-              "value" : ["scalars", "who_asked_l3_0"]
-            },
-            {
-              "type" : "field",
-              "value" : ["arp", "spa"]
-            }
-          ],
-          "source_info" : {
-            "filename" : "dhcpsnooping.p4",
-            "line" : 163,
-            "column" : 17,
-            "source_fragment" : "who_asked_l3=hdr.arp.spa"
-          }
-        },
-        {
-          "op" : "assign",
-          "parameters" : [
-            {
-              "type" : "field",
-              "value" : ["arp", "oper"]
-            },
-            {
-              "type" : "hexstr",
-              "value" : "0x0002"
-            }
-          ],
-          "source_info" : {
-            "filename" : "dhcpsnooping.p4",
-            "line" : 166,
-            "column" : 8,
-            "source_fragment" : "hdr.arp.oper=2"
-          }
-        },
-        {
-          "op" : "assign",
-          "parameters" : [
-            {
-              "type" : "field",
-              "value" : ["arp", "sha"]
-            },
-            {
-              "type" : "runtime_data",
-              "value" : 0
-            }
-          ],
-          "source_info" : {
-            "filename" : "dhcpsnooping.p4",
-            "line" : 168,
-            "column" : 8,
-            "source_fragment" : "hdr.arp.sha=asked_mac"
-          }
-        },
-        {
-          "op" : "assign",
-          "parameters" : [
-            {
-              "type" : "field",
-              "value" : ["arp", "spa"]
-            },
-            {
-              "type" : "field",
-              "value" : ["arp", "tpa"]
-            }
-          ],
-          "source_info" : {
-            "filename" : "dhcpsnooping.p4",
-            "line" : 169,
-            "column" : 8,
-            "source_fragment" : "hdr.arp.spa=asked_ip"
-          }
-        },
-        {
-          "op" : "assign",
-          "parameters" : [
-            {
-              "type" : "field",
-              "value" : ["arp", "tha"]
-            },
-            {
-              "type" : "field",
-              "value" : ["scalars", "who_asked_l2_0"]
-            }
-          ],
-          "source_info" : {
-            "filename" : "dhcpsnooping.p4",
-            "line" : 171,
-            "column" : 8,
-            "source_fragment" : "hdr.arp.tha=who_asked_l2"
-          }
-        },
-        {
-          "op" : "assign",
-          "parameters" : [
-            {
-              "type" : "field",
-              "value" : ["arp", "tpa"]
-            },
-            {
-              "type" : "field",
-              "value" : ["scalars", "who_asked_l3_0"]
-            }
-          ],
-          "source_info" : {
-            "filename" : "dhcpsnooping.p4",
-            "line" : 172,
-            "column" : 8,
-            "source_fragment" : "hdr.arp.tpa=who_asked_l3"
-          }
-        },
-        {
-          "op" : "assign",
-          "parameters" : [
-            {
-              "type" : "field",
-              "value" : ["eth", "dstAddr"]
-            },
-            {
-              "type" : "field",
-              "value" : ["scalars", "who_asked_l2_0"]
-            }
-          ],
-          "source_info" : {
-            "filename" : "dhcpsnooping.p4",
-            "line" : 174,
-            "column" : 8,
-            "source_fragment" : "hdr.eth.dstAddr=who_asked_l2"
-          }
-        },
-        {
-          "op" : "assign",
-          "parameters" : [
-            {
-              "type" : "field",
-              "value" : ["eth", "srcAddr"]
-            },
-            {
-              "type" : "runtime_data",
-              "value" : 0
-            }
-          ],
-          "source_info" : {
-            "filename" : "dhcpsnooping.p4",
-            "line" : 175,
-            "column" : 8,
-            "source_fragment" : "hdr.eth.srcAddr=asked_mac"
-          }
-        },
-        {
-          "op" : "assign",
-          "parameters" : [
-            {
-              "type" : "field",
-              "value" : ["standard_metadata", "egress_spec"]
-            },
-            {
-              "type" : "field",
-              "value" : ["standard_metadata", "ingress_port"]
-            }
-          ],
-          "source_info" : {
-            "filename" : "dhcpsnooping.p4",
-            "line" : 177,
-            "column" : 8,
-            "source_fragment" : "standard_metadata.egress_spec=standard_metadata.ingress_port"
-          }
-        }
-      ]
-    },
-    {
-      "name" : "dhcpsnooping216",
-      "id" : 7,
+      "name" : "dhcpsnooping187",
+      "id" : 4,
       "runtime_data" : [],
       "primitives" : [
         {
@@ -792,7 +561,7 @@
           ],
           "source_info" : {
             "filename" : "dhcpsnooping.p4",
-            "line" : 216,
+            "line" : 187,
             "column" : 12,
             "source_fragment" : "discard=true"
           }
@@ -800,8 +569,8 @@
       ]
     },
     {
-      "name" : "dhcpsnooping223",
-      "id" : 8,
+      "name" : "dhcpsnooping194",
+      "id" : 5,
       "runtime_data" : [],
       "primitives" : [
         {
@@ -841,7 +610,7 @@
           ],
           "source_info" : {
             "filename" : "dhcpsnooping.p4",
-            "line" : 223,
+            "line" : 194,
             "column" : 35,
             "source_fragment" : "index_m"
           }
@@ -864,35 +633,16 @@
           ],
           "source_info" : {
             "filename" : "dhcpsnooping.p4",
-            "line" : 223,
+            "line" : 194,
             "column" : 16,
             "source_fragment" : "reg_mac_port.write(index_m, port)"
-          }
-        },
-        {
-          "op" : "assign",
-          "parameters" : [
-            {
-              "type" : "field",
-              "value" : ["standard_metadata", "egress_spec"]
-            },
-            {
-              "type" : "hexstr",
-              "value" : "0x0001"
-            }
-          ],
-          "source_info" : {
-            "filename" : "dhcpsnooping.p4",
-            "line" : 15,
-            "column" : 25,
-            "source_fragment" : "1; ..."
           }
         }
       ]
     },
     {
-      "name" : "dhcpsnooping234",
-      "id" : 9,
+      "name" : "dhcpsnooping206",
+      "id" : 6,
       "runtime_data" : [],
       "primitives" : [
         {
@@ -932,7 +682,7 @@
           ],
           "source_info" : {
             "filename" : "dhcpsnooping.p4",
-            "line" : 234,
+            "line" : 206,
             "column" : 38,
             "source_fragment" : "index_ip"
           }
@@ -955,7 +705,7 @@
           ],
           "source_info" : {
             "filename" : "dhcpsnooping.p4",
-            "line" : 234,
+            "line" : 206,
             "column" : 24,
             "source_fragment" : "reg_mac.write(index_ip, real_mac)"
           }
@@ -997,7 +747,7 @@
           ],
           "source_info" : {
             "filename" : "dhcpsnooping.p4",
-            "line" : 235,
+            "line" : 207,
             "column" : 39,
             "source_fragment" : "index_ip"
           }
@@ -1020,7 +770,7 @@
           ],
           "source_info" : {
             "filename" : "dhcpsnooping.p4",
-            "line" : 235,
+            "line" : 207,
             "column" : 24,
             "source_fragment" : "reg_port.write(index_ip, outPort)"
           }
@@ -1062,7 +812,7 @@
           ],
           "source_info" : {
             "filename" : "dhcpsnooping.p4",
-            "line" : 236,
+            "line" : 208,
             "column" : 40,
             "source_fragment" : "index_ip"
           }
@@ -1085,7 +835,7 @@
           ],
           "source_info" : {
             "filename" : "dhcpsnooping.p4",
-            "line" : 236,
+            "line" : 208,
             "column" : 24,
             "source_fragment" : "reg_valid.write(index_ip, 1)"
           }
@@ -1093,8 +843,8 @@
       ]
     },
     {
-      "name" : "dhcpsnooping229",
-      "id" : 10,
+      "name" : "dhcpsnooping200",
+      "id" : 7,
       "runtime_data" : [],
       "primitives" : [
         {
@@ -1134,7 +884,7 @@
           ],
           "source_info" : {
             "filename" : "dhcpsnooping.p4",
-            "line" : 229,
+            "line" : 200,
             "column" : 47,
             "source_fragment" : "index_m"
           }
@@ -1157,7 +907,7 @@
           ],
           "source_info" : {
             "filename" : "dhcpsnooping.p4",
-            "line" : 229,
+            "line" : 200,
             "column" : 20,
             "source_fragment" : "reg_mac_port.read(outPort, index_m)"
           }
@@ -1176,15 +926,317 @@
           ],
           "source_info" : {
             "filename" : "dhcpsnooping.p4",
-            "line" : 230,
+            "line" : 201,
             "column" : 20,
             "source_fragment" : "standard_metadata.egress_spec=outPort"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "server_answer_forw_0"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "bool",
+                    "value" : true
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "dhcpsnooping.p4",
+            "line" : 202,
+            "column" : 20,
+            "source_fragment" : "server_answer_forw=true"
           }
         }
       ]
     },
     {
-      "name" : "dhcpsnooping240",
+      "name" : "dhcpsnooping212",
+      "id" : 8,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "discard_0"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "bool",
+                    "value" : true
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "dhcpsnooping.p4",
+            "line" : 212,
+            "column" : 20,
+            "source_fragment" : "discard=true"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_4"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["standard_metadata", "ingress_port"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "dhcpsnooping.p4",
+            "line" : 213,
+            "column" : 38,
+            "source_fragment" : "index_p"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.reg_blocked"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_4"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x01"
+            }
+          ],
+          "source_info" : {
+            "filename" : "dhcpsnooping.p4",
+            "line" : 213,
+            "column" : 20,
+            "source_fragment" : "reg_blocked.write(index_p, 1)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "dhcpsnooping223",
+      "id" : 9,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "discard_0"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "bool",
+                    "value" : true
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "dhcpsnooping.p4",
+            "line" : 223,
+            "column" : 20,
+            "source_fragment" : "discard = true"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_5"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["standard_metadata", "ingress_port"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "dhcpsnooping.p4",
+            "line" : 224,
+            "column" : 38,
+            "source_fragment" : "index_p"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.reg_blocked"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_5"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x01"
+            }
+          ],
+          "source_info" : {
+            "filename" : "dhcpsnooping.p4",
+            "line" : 224,
+            "column" : 20,
+            "source_fragment" : "reg_blocked.write(index_p, 1)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "dhcpsnooping235",
+      "id" : 10,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "discard_0"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "bool",
+                    "value" : true
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "dhcpsnooping.p4",
+            "line" : 235,
+            "column" : 24,
+            "source_fragment" : "discard=true"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_6"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["standard_metadata", "ingress_port"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "dhcpsnooping.p4",
+            "line" : 236,
+            "column" : 42,
+            "source_fragment" : "index_p"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.reg_blocked"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_6"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x01"
+            }
+          ],
+          "source_info" : {
+            "filename" : "dhcpsnooping.p4",
+            "line" : 236,
+            "column" : 24,
+            "source_fragment" : "reg_blocked.write(index_p, 1)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "dhcpsnooping243",
       "id" : 11,
       "runtime_data" : [],
       "primitives" : [
@@ -1212,280 +1264,7 @@
           ],
           "source_info" : {
             "filename" : "dhcpsnooping.p4",
-            "line" : 240,
-            "column" : 20,
-            "source_fragment" : "discard=true"
-          }
-        },
-        {
-          "op" : "assign",
-          "parameters" : [
-            {
-              "type" : "field",
-              "value" : ["scalars", "tmp_4"]
-            },
-            {
-              "type" : "expression",
-              "value" : {
-                "type" : "expression",
-                "value" : {
-                  "op" : "&",
-                  "left" : {
-                    "type" : "field",
-                    "value" : ["standard_metadata", "ingress_port"]
-                  },
-                  "right" : {
-                    "type" : "hexstr",
-                    "value" : "0xffffffff"
-                  }
-                }
-              }
-            }
-          ],
-          "source_info" : {
-            "filename" : "dhcpsnooping.p4",
-            "line" : 241,
-            "column" : 38,
-            "source_fragment" : "index_p"
-          }
-        },
-        {
-          "op" : "register_write",
-          "parameters" : [
-            {
-              "type" : "register_array",
-              "value" : "MyIngress.reg_blocked"
-            },
-            {
-              "type" : "field",
-              "value" : ["scalars", "tmp_4"]
-            },
-            {
-              "type" : "hexstr",
-              "value" : "0x01"
-            }
-          ],
-          "source_info" : {
-            "filename" : "dhcpsnooping.p4",
-            "line" : 241,
-            "column" : 20,
-            "source_fragment" : "reg_blocked.write(index_p, 1)"
-          }
-        }
-      ]
-    },
-    {
-      "name" : "dhcpsnooping251",
-      "id" : 12,
-      "runtime_data" : [],
-      "primitives" : [
-        {
-          "op" : "assign",
-          "parameters" : [
-            {
-              "type" : "field",
-              "value" : ["scalars", "discard_0"]
-            },
-            {
-              "type" : "expression",
-              "value" : {
-                "type" : "expression",
-                "value" : {
-                  "op" : "b2d",
-                  "left" : null,
-                  "right" : {
-                    "type" : "bool",
-                    "value" : true
-                  }
-                }
-              }
-            }
-          ],
-          "source_info" : {
-            "filename" : "dhcpsnooping.p4",
-            "line" : 251,
-            "column" : 20,
-            "source_fragment" : "discard = true"
-          }
-        },
-        {
-          "op" : "assign",
-          "parameters" : [
-            {
-              "type" : "field",
-              "value" : ["scalars", "tmp_5"]
-            },
-            {
-              "type" : "expression",
-              "value" : {
-                "type" : "expression",
-                "value" : {
-                  "op" : "&",
-                  "left" : {
-                    "type" : "field",
-                    "value" : ["standard_metadata", "ingress_port"]
-                  },
-                  "right" : {
-                    "type" : "hexstr",
-                    "value" : "0xffffffff"
-                  }
-                }
-              }
-            }
-          ],
-          "source_info" : {
-            "filename" : "dhcpsnooping.p4",
-            "line" : 252,
-            "column" : 38,
-            "source_fragment" : "index_p"
-          }
-        },
-        {
-          "op" : "register_write",
-          "parameters" : [
-            {
-              "type" : "register_array",
-              "value" : "MyIngress.reg_blocked"
-            },
-            {
-              "type" : "field",
-              "value" : ["scalars", "tmp_5"]
-            },
-            {
-              "type" : "hexstr",
-              "value" : "0x01"
-            }
-          ],
-          "source_info" : {
-            "filename" : "dhcpsnooping.p4",
-            "line" : 252,
-            "column" : 20,
-            "source_fragment" : "reg_blocked.write(index_p, 1)"
-          }
-        }
-      ]
-    },
-    {
-      "name" : "dhcpsnooping263",
-      "id" : 13,
-      "runtime_data" : [],
-      "primitives" : [
-        {
-          "op" : "assign",
-          "parameters" : [
-            {
-              "type" : "field",
-              "value" : ["scalars", "discard_0"]
-            },
-            {
-              "type" : "expression",
-              "value" : {
-                "type" : "expression",
-                "value" : {
-                  "op" : "b2d",
-                  "left" : null,
-                  "right" : {
-                    "type" : "bool",
-                    "value" : true
-                  }
-                }
-              }
-            }
-          ],
-          "source_info" : {
-            "filename" : "dhcpsnooping.p4",
-            "line" : 263,
-            "column" : 24,
-            "source_fragment" : "discard=true"
-          }
-        },
-        {
-          "op" : "assign",
-          "parameters" : [
-            {
-              "type" : "field",
-              "value" : ["scalars", "tmp_6"]
-            },
-            {
-              "type" : "expression",
-              "value" : {
-                "type" : "expression",
-                "value" : {
-                  "op" : "&",
-                  "left" : {
-                    "type" : "field",
-                    "value" : ["standard_metadata", "ingress_port"]
-                  },
-                  "right" : {
-                    "type" : "hexstr",
-                    "value" : "0xffffffff"
-                  }
-                }
-              }
-            }
-          ],
-          "source_info" : {
-            "filename" : "dhcpsnooping.p4",
-            "line" : 264,
-            "column" : 42,
-            "source_fragment" : "index_p"
-          }
-        },
-        {
-          "op" : "register_write",
-          "parameters" : [
-            {
-              "type" : "register_array",
-              "value" : "MyIngress.reg_blocked"
-            },
-            {
-              "type" : "field",
-              "value" : ["scalars", "tmp_6"]
-            },
-            {
-              "type" : "hexstr",
-              "value" : "0x01"
-            }
-          ],
-          "source_info" : {
-            "filename" : "dhcpsnooping.p4",
-            "line" : 264,
-            "column" : 24,
-            "source_fragment" : "reg_blocked.write(index_p, 1)"
-          }
-        }
-      ]
-    },
-    {
-      "name" : "dhcpsnooping271",
-      "id" : 14,
-      "runtime_data" : [],
-      "primitives" : [
-        {
-          "op" : "assign",
-          "parameters" : [
-            {
-              "type" : "field",
-              "value" : ["scalars", "discard_0"]
-            },
-            {
-              "type" : "expression",
-              "value" : {
-                "type" : "expression",
-                "value" : {
-                  "op" : "b2d",
-                  "left" : null,
-                  "right" : {
-                    "type" : "bool",
-                    "value" : true
-                  }
-                }
-              }
-            }
-          ],
-          "source_info" : {
-            "filename" : "dhcpsnooping.p4",
-            "line" : 271,
+            "line" : 243,
             "column" : 28,
             "source_fragment" : "discard = true"
           }
@@ -1517,7 +1296,7 @@
           ],
           "source_info" : {
             "filename" : "dhcpsnooping.p4",
-            "line" : 272,
+            "line" : 244,
             "column" : 46,
             "source_fragment" : "index_p"
           }
@@ -1540,7 +1319,7 @@
           ],
           "source_info" : {
             "filename" : "dhcpsnooping.p4",
-            "line" : 272,
+            "line" : 244,
             "column" : 28,
             "source_fragment" : "reg_blocked.write(index_p, 1)"
           }
@@ -1548,8 +1327,8 @@
       ]
     },
     {
-      "name" : "dhcpsnooping268",
-      "id" : 15,
+      "name" : "dhcpsnooping240",
+      "id" : 12,
       "runtime_data" : [],
       "primitives" : [
         {
@@ -1589,7 +1368,7 @@
           ],
           "source_info" : {
             "filename" : "dhcpsnooping.p4",
-            "line" : 268,
+            "line" : 240,
             "column" : 47,
             "source_fragment" : "index"
           }
@@ -1612,7 +1391,7 @@
           ],
           "source_info" : {
             "filename" : "dhcpsnooping.p4",
-            "line" : 268,
+            "line" : 240,
             "column" : 24,
             "source_fragment" : "reg_mac.read(real_mac, index)"
           }
@@ -1654,7 +1433,7 @@
           ],
           "source_info" : {
             "filename" : "dhcpsnooping.p4",
-            "line" : 269,
+            "line" : 241,
             "column" : 49,
             "source_fragment" : "index"
           }
@@ -1677,7 +1456,7 @@
           ],
           "source_info" : {
             "filename" : "dhcpsnooping.p4",
-            "line" : 269,
+            "line" : 241,
             "column" : 24,
             "source_fragment" : "reg_port.read(real_port, index)"
           }
@@ -1685,8 +1464,8 @@
       ]
     },
     {
-      "name" : "dhcpsnooping259",
-      "id" : 16,
+      "name" : "dhcpsnooping231",
+      "id" : 13,
       "runtime_data" : [],
       "primitives" : [
         {
@@ -1726,7 +1505,7 @@
           ],
           "source_info" : {
             "filename" : "dhcpsnooping.p4",
-            "line" : 259,
+            "line" : 231,
             "column" : 44,
             "source_fragment" : "index"
           }
@@ -1749,7 +1528,7 @@
           ],
           "source_info" : {
             "filename" : "dhcpsnooping.p4",
-            "line" : 259,
+            "line" : 231,
             "column" : 20,
             "source_fragment" : "reg_valid.read(learned, index)"
           }
@@ -1757,8 +1536,8 @@
       ]
     },
     {
-      "name" : "dhcpsnooping211",
-      "id" : 17,
+      "name" : "dhcpsnooping181",
+      "id" : 14,
       "runtime_data" : [],
       "primitives" : [
         {
@@ -1788,7 +1567,7 @@
           ],
           "source_info" : {
             "filename" : "dhcpsnooping.p4",
-            "line" : 211,
+            "line" : 181,
             "column" : 39,
             "source_fragment" : "index_p"
           }
@@ -1811,9 +1590,38 @@
           ],
           "source_info" : {
             "filename" : "dhcpsnooping.p4",
-            "line" : 211,
+            "line" : 181,
             "column" : 8,
             "source_fragment" : "reg_blocked.read(port_blocked, index_p)"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "server_answer_forw_0"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "bool",
+                    "value" : false
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "dhcpsnooping.p4",
+            "line" : 183,
+            "column" : 13,
+            "source_fragment" : "server_answer_forw=false"
           }
         },
         {
@@ -1840,9 +1648,57 @@
           ],
           "source_info" : {
             "filename" : "dhcpsnooping.p4",
-            "line" : 213,
+            "line" : 184,
             "column" : 13,
             "source_fragment" : "discard=false"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "dhcpsnooping265",
+      "id" : 15,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "mcast_grp"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0001"
+            }
+          ],
+          "source_info" : {
+            "filename" : "dhcpsnooping.p4",
+            "line" : 265,
+            "column" : 12,
+            "source_fragment" : "standard_metadata.mcast_grp=1"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "dhcpsnooping281",
+      "id" : 16,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "mark_to_drop",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "standard_metadata"
+            }
+          ],
+          "source_info" : {
+            "filename" : "dhcpsnooping.p4",
+            "line" : 281,
+            "column" : 12,
+            "source_fragment" : "mark_to_drop(standard_metadata)"
           }
         }
       ]
@@ -1854,18 +1710,18 @@
       "id" : 0,
       "source_info" : {
         "filename" : "dhcpsnooping.p4",
-        "line" : 143,
+        "line" : 144,
         "column" : 8,
         "source_fragment" : "MyIngress"
       },
-      "init_table" : "tbl_dhcpsnooping211",
+      "init_table" : "tbl_dhcpsnooping181",
       "tables" : [
         {
-          "name" : "tbl_dhcpsnooping211",
+          "name" : "tbl_dhcpsnooping181",
           "id" : 0,
           "source_info" : {
             "filename" : "dhcpsnooping.p4",
-            "line" : 211,
+            "line" : 181,
             "column" : 8,
             "source_fragment" : "reg_blocked.read(port_blocked, index_p); ..."
           },
@@ -1876,25 +1732,25 @@
           "with_counters" : false,
           "support_timeout" : false,
           "direct_meters" : null,
-          "action_ids" : [17],
-          "actions" : ["dhcpsnooping211"],
+          "action_ids" : [14],
+          "actions" : ["dhcpsnooping181"],
           "base_default_next" : "node_3",
           "next_tables" : {
-            "dhcpsnooping211" : "node_3"
+            "dhcpsnooping181" : "node_3"
           },
           "default_entry" : {
-            "action_id" : 17,
+            "action_id" : 14,
             "action_const" : true,
             "action_data" : [],
             "action_entry_const" : true
           }
         },
         {
-          "name" : "tbl_dhcpsnooping216",
+          "name" : "tbl_dhcpsnooping187",
           "id" : 1,
           "source_info" : {
             "filename" : "dhcpsnooping.p4",
-            "line" : 216,
+            "line" : 187,
             "column" : 19,
             "source_fragment" : "="
           },
@@ -1905,27 +1761,27 @@
           "with_counters" : false,
           "support_timeout" : false,
           "direct_meters" : null,
-          "action_ids" : [7],
-          "actions" : ["dhcpsnooping216"],
+          "action_ids" : [4],
+          "actions" : ["dhcpsnooping187"],
           "base_default_next" : "node_25",
           "next_tables" : {
-            "dhcpsnooping216" : "node_25"
+            "dhcpsnooping187" : "node_25"
           },
           "default_entry" : {
-            "action_id" : 7,
+            "action_id" : 4,
             "action_const" : true,
             "action_data" : [],
             "action_entry_const" : true
           }
         },
         {
-          "name" : "tbl_dhcpsnooping223",
+          "name" : "tbl_dhcpsnooping194",
           "id" : 2,
           "source_info" : {
             "filename" : "dhcpsnooping.p4",
-            "line" : 223,
+            "line" : 194,
             "column" : 16,
-            "source_fragment" : "reg_mac_port.write(index_m, port); ..."
+            "source_fragment" : "reg_mac_port.write(index_m, port)"
           },
           "key" : [],
           "match_type" : "exact",
@@ -1934,25 +1790,25 @@
           "with_counters" : false,
           "support_timeout" : false,
           "direct_meters" : null,
-          "action_ids" : [8],
-          "actions" : ["dhcpsnooping223"],
+          "action_ids" : [5],
+          "actions" : ["dhcpsnooping194"],
           "base_default_next" : "node_25",
           "next_tables" : {
-            "dhcpsnooping223" : "node_25"
+            "dhcpsnooping194" : "node_25"
           },
           "default_entry" : {
-            "action_id" : 8,
+            "action_id" : 5,
             "action_const" : true,
             "action_data" : [],
             "action_entry_const" : true
           }
         },
         {
-          "name" : "tbl_dhcpsnooping229",
+          "name" : "tbl_dhcpsnooping200",
           "id" : 3,
           "source_info" : {
             "filename" : "dhcpsnooping.p4",
-            "line" : 229,
+            "line" : 200,
             "column" : 20,
             "source_fragment" : "reg_mac_port.read(outPort, index_m); ..."
           },
@@ -1963,25 +1819,25 @@
           "with_counters" : false,
           "support_timeout" : false,
           "direct_meters" : null,
-          "action_ids" : [10],
-          "actions" : ["dhcpsnooping229"],
+          "action_ids" : [7],
+          "actions" : ["dhcpsnooping200"],
           "base_default_next" : "node_11",
           "next_tables" : {
-            "dhcpsnooping229" : "node_11"
+            "dhcpsnooping200" : "node_11"
           },
           "default_entry" : {
-            "action_id" : 10,
+            "action_id" : 7,
             "action_const" : true,
             "action_data" : [],
             "action_entry_const" : true
           }
         },
         {
-          "name" : "tbl_dhcpsnooping234",
+          "name" : "tbl_dhcpsnooping206",
           "id" : 4,
           "source_info" : {
             "filename" : "dhcpsnooping.p4",
-            "line" : 234,
+            "line" : 206,
             "column" : 24,
             "source_fragment" : "reg_mac.write(index_ip, real_mac); ..."
           },
@@ -1992,25 +1848,25 @@
           "with_counters" : false,
           "support_timeout" : false,
           "direct_meters" : null,
-          "action_ids" : [9],
-          "actions" : ["dhcpsnooping234"],
+          "action_ids" : [6],
+          "actions" : ["dhcpsnooping206"],
           "base_default_next" : "node_25",
           "next_tables" : {
-            "dhcpsnooping234" : "node_25"
+            "dhcpsnooping206" : "node_25"
           },
           "default_entry" : {
-            "action_id" : 9,
+            "action_id" : 6,
             "action_const" : true,
             "action_data" : [],
             "action_entry_const" : true
           }
         },
         {
-          "name" : "tbl_dhcpsnooping240",
+          "name" : "tbl_dhcpsnooping212",
           "id" : 5,
           "source_info" : {
             "filename" : "dhcpsnooping.p4",
-            "line" : 240,
+            "line" : 212,
             "column" : 27,
             "source_fragment" : "=true; ..."
           },
@@ -2021,25 +1877,25 @@
           "with_counters" : false,
           "support_timeout" : false,
           "direct_meters" : null,
-          "action_ids" : [11],
-          "actions" : ["dhcpsnooping240"],
+          "action_ids" : [8],
+          "actions" : ["dhcpsnooping212"],
           "base_default_next" : "node_25",
           "next_tables" : {
-            "dhcpsnooping240" : "node_25"
+            "dhcpsnooping212" : "node_25"
           },
           "default_entry" : {
-            "action_id" : 11,
+            "action_id" : 8,
             "action_const" : true,
             "action_data" : [],
             "action_entry_const" : true
           }
         },
         {
-          "name" : "tbl_dhcpsnooping251",
+          "name" : "tbl_dhcpsnooping223",
           "id" : 6,
           "source_info" : {
             "filename" : "dhcpsnooping.p4",
-            "line" : 251,
+            "line" : 223,
             "column" : 28,
             "source_fragment" : "= true; ..."
           },
@@ -2050,25 +1906,25 @@
           "with_counters" : false,
           "support_timeout" : false,
           "direct_meters" : null,
-          "action_ids" : [12],
-          "actions" : ["dhcpsnooping251"],
+          "action_ids" : [9],
+          "actions" : ["dhcpsnooping223"],
           "base_default_next" : "node_25",
           "next_tables" : {
-            "dhcpsnooping251" : "node_25"
+            "dhcpsnooping223" : "node_25"
           },
           "default_entry" : {
-            "action_id" : 12,
+            "action_id" : 9,
             "action_const" : true,
             "action_data" : [],
             "action_entry_const" : true
           }
         },
         {
-          "name" : "tbl_dhcpsnooping259",
+          "name" : "tbl_dhcpsnooping231",
           "id" : 7,
           "source_info" : {
             "filename" : "dhcpsnooping.p4",
-            "line" : 259,
+            "line" : 231,
             "column" : 20,
             "source_fragment" : "reg_valid.read(learned, index)"
           },
@@ -2079,25 +1935,25 @@
           "with_counters" : false,
           "support_timeout" : false,
           "direct_meters" : null,
-          "action_ids" : [16],
-          "actions" : ["dhcpsnooping259"],
+          "action_ids" : [13],
+          "actions" : ["dhcpsnooping231"],
           "base_default_next" : "node_20",
           "next_tables" : {
-            "dhcpsnooping259" : "node_20"
+            "dhcpsnooping231" : "node_20"
           },
           "default_entry" : {
-            "action_id" : 16,
+            "action_id" : 13,
             "action_const" : true,
             "action_data" : [],
             "action_entry_const" : true
           }
         },
         {
-          "name" : "tbl_dhcpsnooping263",
+          "name" : "tbl_dhcpsnooping235",
           "id" : 8,
           "source_info" : {
             "filename" : "dhcpsnooping.p4",
-            "line" : 263,
+            "line" : 235,
             "column" : 31,
             "source_fragment" : "=true; ..."
           },
@@ -2108,25 +1964,25 @@
           "with_counters" : false,
           "support_timeout" : false,
           "direct_meters" : null,
-          "action_ids" : [13],
-          "actions" : ["dhcpsnooping263"],
+          "action_ids" : [10],
+          "actions" : ["dhcpsnooping235"],
           "base_default_next" : "node_25",
           "next_tables" : {
-            "dhcpsnooping263" : "node_25"
+            "dhcpsnooping235" : "node_25"
           },
           "default_entry" : {
-            "action_id" : 13,
+            "action_id" : 10,
             "action_const" : true,
             "action_data" : [],
             "action_entry_const" : true
           }
         },
         {
-          "name" : "tbl_dhcpsnooping268",
+          "name" : "tbl_dhcpsnooping240",
           "id" : 9,
           "source_info" : {
             "filename" : "dhcpsnooping.p4",
-            "line" : 268,
+            "line" : 240,
             "column" : 24,
             "source_fragment" : "reg_mac.read(real_mac, index); ..."
           },
@@ -2137,25 +1993,25 @@
           "with_counters" : false,
           "support_timeout" : false,
           "direct_meters" : null,
-          "action_ids" : [15],
-          "actions" : ["dhcpsnooping268"],
+          "action_ids" : [12],
+          "actions" : ["dhcpsnooping240"],
           "base_default_next" : "node_23",
           "next_tables" : {
-            "dhcpsnooping268" : "node_23"
+            "dhcpsnooping240" : "node_23"
           },
           "default_entry" : {
-            "action_id" : 15,
+            "action_id" : 12,
             "action_const" : true,
             "action_data" : [],
             "action_entry_const" : true
           }
         },
         {
-          "name" : "tbl_dhcpsnooping271",
+          "name" : "tbl_dhcpsnooping243",
           "id" : 10,
           "source_info" : {
             "filename" : "dhcpsnooping.p4",
-            "line" : 271,
+            "line" : 243,
             "column" : 36,
             "source_fragment" : "= true; ..."
           },
@@ -2166,14 +2022,14 @@
           "with_counters" : false,
           "support_timeout" : false,
           "direct_meters" : null,
-          "action_ids" : [14],
-          "actions" : ["dhcpsnooping271"],
+          "action_ids" : [11],
+          "actions" : ["dhcpsnooping243"],
           "base_default_next" : "node_25",
           "next_tables" : {
-            "dhcpsnooping271" : "node_25"
+            "dhcpsnooping243" : "node_25"
           },
           "default_entry" : {
-            "action_id" : 14,
+            "action_id" : 11,
             "action_const" : true,
             "action_data" : [],
             "action_entry_const" : true
@@ -2184,7 +2040,7 @@
           "id" : 11,
           "source_info" : {
             "filename" : "dhcpsnooping.p4",
-            "line" : 285,
+            "line" : 257,
             "column" : 12,
             "source_fragment" : "drop()"
           },
@@ -2195,55 +2051,46 @@
           "with_counters" : false,
           "support_timeout" : false,
           "direct_meters" : null,
-          "action_ids" : [4],
+          "action_ids" : [2],
           "actions" : ["MyIngress.drop"],
           "base_default_next" : null,
           "next_tables" : {
             "MyIngress.drop" : null
           },
           "default_entry" : {
-            "action_id" : 4,
+            "action_id" : 2,
             "action_const" : true,
             "action_data" : [],
             "action_entry_const" : true
           }
         },
         {
-          "name" : "MyIngress.arp_response",
+          "name" : "tbl_dhcpsnooping265",
           "id" : 12,
           "source_info" : {
             "filename" : "dhcpsnooping.p4",
-            "line" : 193,
-            "column" : 10,
-            "source_fragment" : "arp_response"
+            "line" : 265,
+            "column" : 39,
+            "source_fragment" : "="
           },
-          "key" : [
-            {
-              "match_type" : "exact",
-              "name" : "hdr.arp.tpa",
-              "target" : ["arp", "tpa"],
-              "mask" : null
-            }
-          ],
+          "key" : [],
           "match_type" : "exact",
           "type" : "simple",
           "max_size" : 1024,
           "with_counters" : false,
           "support_timeout" : false,
           "direct_meters" : null,
-          "action_ids" : [6, 3, 1],
-          "actions" : ["MyIngress.resolve_arp", "MyIngress.drop", "NoAction"],
+          "action_ids" : [15],
+          "actions" : ["dhcpsnooping265"],
           "base_default_next" : null,
           "next_tables" : {
-            "MyIngress.resolve_arp" : null,
-            "MyIngress.drop" : null,
-            "NoAction" : null
+            "dhcpsnooping265" : null
           },
           "default_entry" : {
-            "action_id" : 3,
-            "action_const" : false,
+            "action_id" : 15,
+            "action_const" : true,
             "action_data" : [],
-            "action_entry_const" : false
+            "action_entry_const" : true
           }
         },
         {
@@ -2251,7 +2098,7 @@
           "id" : 13,
           "source_info" : {
             "filename" : "dhcpsnooping.p4",
-            "line" : 180,
+            "line" : 163,
             "column" : 10,
             "source_fragment" : "mac_forw"
           },
@@ -2269,7 +2116,7 @@
           "with_counters" : false,
           "support_timeout" : false,
           "direct_meters" : null,
-          "action_ids" : [5, 2, 0],
+          "action_ids" : [3, 1, 0],
           "actions" : ["MyIngress.forward", "MyIngress.drop", "NoAction"],
           "base_default_next" : null,
           "next_tables" : {
@@ -2278,7 +2125,7 @@
             "NoAction" : null
           },
           "default_entry" : {
-            "action_id" : 2,
+            "action_id" : 1,
             "action_const" : false,
             "action_data" : [],
             "action_entry_const" : false
@@ -2292,7 +2139,7 @@
           "id" : 0,
           "source_info" : {
             "filename" : "dhcpsnooping.p4",
-            "line" : 215,
+            "line" : 186,
             "column" : 12,
             "source_fragment" : "port_blocked==1"
           },
@@ -2310,7 +2157,7 @@
               }
             }
           },
-          "true_next" : "tbl_dhcpsnooping216",
+          "true_next" : "tbl_dhcpsnooping187",
           "false_next" : "node_5"
         },
         {
@@ -2318,7 +2165,7 @@
           "id" : 1,
           "source_info" : {
             "filename" : "dhcpsnooping.p4",
-            "line" : 219,
+            "line" : 190,
             "column" : 17,
             "source_fragment" : "hdr.dhcp.isValid()"
           },
@@ -2341,7 +2188,7 @@
           "id" : 2,
           "source_info" : {
             "filename" : "dhcpsnooping.p4",
-            "line" : 222,
+            "line" : 193,
             "column" : 16,
             "source_fragment" : "hdr.udp.dstPort==67"
           },
@@ -2359,7 +2206,7 @@
               }
             }
           },
-          "true_next" : "tbl_dhcpsnooping223",
+          "true_next" : "tbl_dhcpsnooping194",
           "false_next" : "node_8"
         },
         {
@@ -2367,7 +2214,7 @@
           "id" : 3,
           "source_info" : {
             "filename" : "dhcpsnooping.p4",
-            "line" : 226,
+            "line" : 197,
             "column" : 21,
             "source_fragment" : "hdr.udp.dstPort==68"
           },
@@ -2393,7 +2240,7 @@
           "id" : 4,
           "source_info" : {
             "filename" : "dhcpsnooping.p4",
-            "line" : 227,
+            "line" : 198,
             "column" : 20,
             "source_fragment" : "port==SERVER_PORT"
           },
@@ -2411,15 +2258,15 @@
               }
             }
           },
-          "true_next" : "tbl_dhcpsnooping229",
-          "false_next" : "tbl_dhcpsnooping240"
+          "true_next" : "tbl_dhcpsnooping200",
+          "false_next" : "tbl_dhcpsnooping212"
         },
         {
           "name" : "node_11",
           "id" : 5,
           "source_info" : {
             "filename" : "dhcpsnooping.p4",
-            "line" : 231,
+            "line" : 203,
             "column" : 24,
             "source_fragment" : "hdr.dhcp.opt_code == 53 && hdr.dhcp.msg_type == 5"
           },
@@ -2457,7 +2304,7 @@
               }
             }
           },
-          "true_next" : "tbl_dhcpsnooping234",
+          "true_next" : "tbl_dhcpsnooping206",
           "false_next" : "node_25"
         },
         {
@@ -2465,7 +2312,7 @@
           "id" : 6,
           "source_info" : {
             "filename" : "dhcpsnooping.p4",
-            "line" : 245,
+            "line" : 217,
             "column" : 17,
             "source_fragment" : "hdr.arp.isValid()"
           },
@@ -2488,7 +2335,7 @@
           "id" : 7,
           "source_info" : {
             "filename" : "dhcpsnooping.p4",
-            "line" : 246,
+            "line" : 218,
             "column" : 16,
             "source_fragment" : "port != SERVER_PORT"
           },
@@ -2514,7 +2361,7 @@
           "id" : 8,
           "source_info" : {
             "filename" : "dhcpsnooping.p4",
-            "line" : 250,
+            "line" : 222,
             "column" : 20,
             "source_fragment" : "hdr.eth.srcAddr != mac_pkt"
           },
@@ -2532,7 +2379,7 @@
               }
             }
           },
-          "true_next" : "tbl_dhcpsnooping251",
+          "true_next" : "tbl_dhcpsnooping223",
           "false_next" : "node_18"
         },
         {
@@ -2540,7 +2387,7 @@
           "id" : 9,
           "source_info" : {
             "filename" : "dhcpsnooping.p4",
-            "line" : 254,
+            "line" : 226,
             "column" : 25,
             "source_fragment" : "hdr.arp.spa != 0"
           },
@@ -2558,7 +2405,7 @@
               }
             }
           },
-          "true_next" : "tbl_dhcpsnooping259",
+          "true_next" : "tbl_dhcpsnooping231",
           "false_next" : "node_25"
         },
         {
@@ -2566,7 +2413,7 @@
           "id" : 10,
           "source_info" : {
             "filename" : "dhcpsnooping.p4",
-            "line" : 261,
+            "line" : 233,
             "column" : 24,
             "source_fragment" : "learned == 0"
           },
@@ -2584,15 +2431,15 @@
               }
             }
           },
-          "true_next" : "tbl_dhcpsnooping263",
-          "false_next" : "tbl_dhcpsnooping268"
+          "true_next" : "tbl_dhcpsnooping235",
+          "false_next" : "tbl_dhcpsnooping240"
         },
         {
           "name" : "node_23",
           "id" : 11,
           "source_info" : {
             "filename" : "dhcpsnooping.p4",
-            "line" : 270,
+            "line" : 242,
             "column" : 28,
             "source_fragment" : "real_mac != mac_pkt || real_port != port"
           },
@@ -2630,7 +2477,7 @@
               }
             }
           },
-          "true_next" : "tbl_dhcpsnooping271",
+          "true_next" : "tbl_dhcpsnooping243",
           "false_next" : "node_25"
         },
         {
@@ -2638,7 +2485,7 @@
           "id" : 12,
           "source_info" : {
             "filename" : "dhcpsnooping.p4",
-            "line" : 284,
+            "line" : 256,
             "column" : 12,
             "source_fragment" : "discard"
           },
@@ -2661,9 +2508,9 @@
           "id" : 13,
           "source_info" : {
             "filename" : "dhcpsnooping.p4",
-            "line" : 288,
+            "line" : 260,
             "column" : 17,
-            "source_fragment" : "hdr.dhcp.isValid()"
+            "source_fragment" : "server_answer_forw"
           },
           "expression" : {
             "type" : "expression",
@@ -2672,7 +2519,7 @@
               "left" : null,
               "right" : {
                 "type" : "field",
-                "value" : ["dhcp", "$valid$"]
+                "value" : ["scalars", "server_answer_forw_0"]
               }
             }
           },
@@ -2684,42 +2531,25 @@
           "id" : 14,
           "source_info" : {
             "filename" : "dhcpsnooping.p4",
-            "line" : 292,
+            "line" : 264,
             "column" : 17,
-            "source_fragment" : "hdr.arp.isValid() && hdr.arp.oper == 1"
+            "source_fragment" : "hdr.eth.dstAddr==bcast"
           },
           "expression" : {
             "type" : "expression",
             "value" : {
-              "op" : "and",
+              "op" : "==",
               "left" : {
-                "type" : "expression",
-                "value" : {
-                  "op" : "d2b",
-                  "left" : null,
-                  "right" : {
-                    "type" : "field",
-                    "value" : ["arp", "$valid$"]
-                  }
-                }
+                "type" : "field",
+                "value" : ["eth", "dstAddr"]
               },
               "right" : {
-                "type" : "expression",
-                "value" : {
-                  "op" : "==",
-                  "left" : {
-                    "type" : "field",
-                    "value" : ["arp", "oper"]
-                  },
-                  "right" : {
-                    "type" : "hexstr",
-                    "value" : "0x0001"
-                  }
-                }
+                "type" : "hexstr",
+                "value" : "0xffffffffffff"
               }
             }
           },
-          "true_next" : "MyIngress.arp_response",
+          "true_next" : "tbl_dhcpsnooping265",
           "false_next" : "MyIngress.mac_forw"
         }
       ]
@@ -2729,14 +2559,71 @@
       "id" : 1,
       "source_info" : {
         "filename" : "dhcpsnooping.p4",
-        "line" : 304,
+        "line" : 277,
         "column" : 8,
         "source_fragment" : "MyEgress"
       },
-      "init_table" : null,
-      "tables" : [],
+      "init_table" : "node_33",
+      "tables" : [
+        {
+          "name" : "tbl_dhcpsnooping281",
+          "id" : 14,
+          "source_info" : {
+            "filename" : "dhcpsnooping.p4",
+            "line" : 281,
+            "column" : 12,
+            "source_fragment" : "mark_to_drop(standard_metadata)"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [16],
+          "actions" : ["dhcpsnooping281"],
+          "base_default_next" : null,
+          "next_tables" : {
+            "dhcpsnooping281" : null
+          },
+          "default_entry" : {
+            "action_id" : 16,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        }
+      ],
       "action_profiles" : [],
-      "conditionals" : []
+      "conditionals" : [
+        {
+          "name" : "node_33",
+          "id" : 15,
+          "source_info" : {
+            "filename" : "dhcpsnooping.p4",
+            "line" : 280,
+            "column" : 12,
+            "source_fragment" : "standard_metadata.egress_port==standard_metadata.ingress_port"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "==",
+              "left" : {
+                "type" : "field",
+                "value" : ["standard_metadata", "egress_port"]
+              },
+              "right" : {
+                "type" : "field",
+                "value" : ["standard_metadata", "ingress_port"]
+              }
+            }
+          },
+          "false_next" : null,
+          "true_next" : "tbl_dhcpsnooping281"
+        }
+      ]
     }
   ],
   "checksums" : [],

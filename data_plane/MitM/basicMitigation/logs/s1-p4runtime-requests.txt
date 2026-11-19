@@ -1,10 +1,10 @@
 
-[2026-11-15 06:36:08.513] /p4.v1.P4Runtime/SetForwardingPipelineConfig
+[2026-11-19 01:43:16.127] /p4.v1.P4Runtime/SetForwardingPipelineConfig
 ---
-Message too long (62247 bytes)! Skipping log...
+Message too long (57213 bytes)! Skipping log...
 ---
 
-[2026-11-15 06:36:08.528] /p4.v1.P4Runtime/Write
+[2026-11-19 01:43:16.142] /p4.v1.P4Runtime/Write
 ---
 election_id {
   low: 1
@@ -34,37 +34,7 @@ updates {
 }
 ---
 
-[2026-11-15 06:36:08.529] /p4.v1.P4Runtime/Write
----
-election_id {
-  low: 1
-}
-updates {
-  type: INSERT
-  entity {
-    table_entry {
-      table_id: 39690190
-      match {
-        field_id: 1
-        exact {
-          value: "\n\000\000\001"
-        }
-      }
-      action {
-        action {
-          action_id: 21197892
-          params {
-            param_id: 1
-            value: "\000\000\000\000\000\001"
-          }
-        }
-      }
-    }
-  }
-}
----
-
-[2026-11-15 06:36:08.530] /p4.v1.P4Runtime/Write
+[2026-11-19 01:43:16.143] /p4.v1.P4Runtime/Write
 ---
 election_id {
   low: 1
@@ -94,37 +64,7 @@ updates {
 }
 ---
 
-[2026-11-15 06:36:08.531] /p4.v1.P4Runtime/Write
----
-election_id {
-  low: 1
-}
-updates {
-  type: INSERT
-  entity {
-    table_entry {
-      table_id: 39690190
-      match {
-        field_id: 1
-        exact {
-          value: "\n\000\000\002"
-        }
-      }
-      action {
-        action {
-          action_id: 21197892
-          params {
-            param_id: 1
-            value: "\000\000\000\000\000\002"
-          }
-        }
-      }
-    }
-  }
-}
----
-
-[2026-11-15 06:36:08.535] /p4.v1.P4Runtime/Write
+[2026-11-19 01:43:16.144] /p4.v1.P4Runtime/Write
 ---
 election_id {
   low: 1
@@ -154,7 +94,7 @@ updates {
 }
 ---
 
-[2026-11-15 06:36:08.536] /p4.v1.P4Runtime/Write
+[2026-11-19 01:43:16.145] /p4.v1.P4Runtime/Write
 ---
 election_id {
   low: 1
@@ -163,20 +103,53 @@ updates {
   type: INSERT
   entity {
     table_entry {
-      table_id: 39690190
+      table_id: 37636568
       match {
         field_id: 1
         exact {
-          value: "\n\000\000\003"
+          value: "\000\000\000\000\000\004"
         }
       }
       action {
         action {
-          action_id: 21197892
+          action_id: 29683729
           params {
             param_id: 1
-            value: "\000\000\000\000\000\003"
+            value: "\000\004"
           }
+        }
+      }
+    }
+  }
+}
+---
+
+[2026-11-19 01:43:16.145] /p4.v1.P4Runtime/Write
+---
+election_id {
+  low: 1
+}
+updates {
+  type: INSERT
+  entity {
+    packet_replication_engine_entry {
+      multicast_group_entry {
+        multicast_group_id: 1
+        replicas {
+          egress_port: 1
+          instance: 1
+        }
+        replicas {
+          egress_port: 2
+          instance: 1
+        }
+        replicas {
+          egress_port: 3
+          instance: 1
+        }
+        replicas {
+          egress_port: 4
+          instance: 1
         }
       }
     }

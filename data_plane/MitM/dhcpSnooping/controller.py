@@ -15,7 +15,7 @@ from p4runtime_lib.switch import ShutdownAllSwitchConnections
 
 
 def writeRules(p4info_helper, sw):
-
+    replicas=[]
     hosts=[
         {"ip" : "10.0.0.1", "mac" : "00:00:00:00:00:01", "port":1},
         {"ip" : "10.0.0.2", "mac" : "00:00:00:00:00:02", "port":2},
@@ -35,21 +35,10 @@ def writeRules(p4info_helper, sw):
                 }
         )
         sw.WriteTableEntry(table_entry_fw)
-
-
-        table_entry_rp = p4info_helper.buildTableEntry(
-            table_name="MyIngress.arp_response",
-            match_fields={
-                "hdr.arp.tpa": host["ip"]
-                },
-            action_name="MyIngress.resolve_arp",
-            action_params={
-                "asked_mac": host["mac"]
-                }
-        )
-        sw.WriteTableEntry(table_entry_rp)
-
+        replicas.append({"egress_port": host["port"], "instance": 1}) 
         print("Reglas instaladas para:", host["ip"])
+    mc_entry = p4info_helper.buildMulticastGroupEntry(1, replicas)                                  
+    sw.WritePREEntry(mc_entry)
 
 def main(p4info_file_path, bmv2_file_path):
     # Traduce nombres (tablas, acciones) a los IDs que usa P4Runtime
@@ -82,7 +71,7 @@ def main(p4info_file_path, bmv2_file_path):
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Controlador ARP responder')
+    parser = argparse.ArgumentParser(description='CONTROLADOR dhcpsnooping')
     parser.add_argument('--p4info', type=str,
                         default='./build/dhcpsnooping.p4.p4info.txtpb')
     parser.add_argument('--bmv2-json', type=str,

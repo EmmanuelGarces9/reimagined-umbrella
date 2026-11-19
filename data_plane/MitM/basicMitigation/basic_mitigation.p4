@@ -10,7 +10,7 @@ typedef bit<32> indexP4_t;
 
 const bit<16> IPV4=0x800;
 const bit<16> ARP=0x806;
-
+const bit<48> bcast = 0xFFFFFFFFFFFF; 
 
 
 header ethernet_t {
@@ -102,44 +102,13 @@ control MyIngress(inout headers hdr,
         standard_metadata.egress_spec=port;
     }
 
-    action resolve_arp(macType_t asked_mac){
-        macType_t who_asked_l2=hdr.arp.sha;
-        ipType_t who_asked_l3=hdr.arp.spa;
-        ipType_t asked_ip=hdr.arp.tpa;
-
-        hdr.arp.oper=2;
-        
-        hdr.arp.sha=asked_mac;
-        hdr.arp.spa=asked_ip;
-
-        hdr.arp.tha=who_asked_l2;
-        hdr.arp.tpa=who_asked_l3;
-
-        hdr.eth.dstAddr=who_asked_l2;
-        hdr.eth.srcAddr=asked_mac;
-
-        standard_metadata.egress_spec=standard_metadata.ingress_port;
-    }
-    
+   
     table mac_forw{
         key={
             hdr.eth.dstAddr: exact;
         }
         actions={
             forward;
-            drop;
-            NoAction;
-        }
-        size=1024;
-        default_action=drop();
-    }
-
-    table arp_response{
-        key={
-            hdr.arp.tpa: exact;
-        }
-        actions={
-            resolve_arp;
             drop;
             NoAction;
         }
@@ -201,8 +170,8 @@ control MyIngress(inout headers hdr,
     if (descartar) {
         drop();
     }
-    else if (hdr.arp.isValid() && hdr.arp.oper == 1) {
-        arp_response.apply();
+    else if (hdr.eth.dstAddr==bcast) {
+        standard_metadata.mcast_grp=1;
     }
     else {
         mac_forw.apply();
@@ -215,7 +184,12 @@ control MyIngress(inout headers hdr,
 
 control MyEgress(inout headers hdr, inout metadata meta,
                  inout standard_metadata_t standard_metadata) { 
-    apply { } 
+    apply { 
+        if (standard_metadata.egress_port==standard_metadata.ingress_port){
+            mark_to_drop(standard_metadata);
+
+        }
+    } 
 }
 
 control MyComputeChecksum(inout headers hdr, inout metadata meta){
@@ -242,14 +216,6 @@ V1Switch(
     MyComputeChecksum(),
     MyDeparser()
 ) main;
-
-
-
-
-
-
-
-
 
 
 
