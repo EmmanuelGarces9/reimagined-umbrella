@@ -1,0 +1,128 @@
+=== r2 puerto 1 ===
+reading from file capturas/arranque_r2_p1.pcap, link-type EN10MB (Ethernet), snapshot length 262144
+14:19:06.543117 00:00:00:00:00:01 > ff:ff:ff:ff:ff:ff, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.1, length 28
+14:19:06.547968 00:00:00:00:00:01 > ff:ff:ff:ff:ff:ff, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.1, length 28
+14:19:06.550105 00:00:00:00:00:01 > ff:ff:ff:ff:ff:ff, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.1, length 28
+14:19:11.826805 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+14:19:11.826924 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+14:19:11.827037 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+=== r2 puerto 2 ===
+reading from file capturas/arranque_r2_p2.pcap, link-type EN10MB (Ethernet), snapshot length 262144
+14:19:06.545558 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+14:19:06.553816 00:00:00:00:00:02 > ff:ff:ff:ff:ff:ff, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.2, length 28
+14:19:06.558096 00:00:00:00:00:02 > ff:ff:ff:ff:ff:ff, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.2, length 28
+14:19:11.826301 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.2, length 28
+14:19:11.827174 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+14:19:11.827351 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+=== r2 puerto 3 ===
+reading from file capturas/arranque_r2_p3.pcap, link-type EN10MB (Ethernet), snapshot length 262144
+14:19:06.548307 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+14:19:06.555913 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+14:19:06.564423 00:00:00:00:00:03 > ff:ff:ff:ff:ff:ff, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.3, length 28
+14:19:11.826297 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.3, length 28
+14:19:11.826340 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.3, length 28
+14:19:11.827311 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+=== r2 puerto 4 ===
+reading from file capturas/arranque_r2_p4.pcap, link-type EN10MB (Ethernet), snapshot length 262144
+14:19:06.550419 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+14:19:06.558479 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+14:19:06.567251 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+14:19:11.826282 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.4, length 28
+14:19:11.826311 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.4, length 28
+14:19:11.826335 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.4, length 28
+=== r3 puerto 1 ===
+reading from file capturas/arranque_r3_p1.pcap, link-type EN10MB (Ethernet), snapshot length 262144
+14:21:33.471950 00:00:00:00:00:01 > ff:ff:ff:ff:ff:ff, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.1, length 28
+14:21:33.476672 00:00:00:00:00:01 > ff:ff:ff:ff:ff:ff, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.1, length 28
+14:21:33.479117 00:00:00:00:00:01 > ff:ff:ff:ff:ff:ff, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.1, length 28
+14:21:38.771464 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+14:21:38.771570 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+14:21:38.771689 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+=== r3 puerto 2 ===
+reading from file capturas/arranque_r3_p2.pcap, link-type EN10MB (Ethernet), snapshot length 262144
+14:21:33.473973 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+14:21:33.489025 00:00:00:00:00:02 > ff:ff:ff:ff:ff:ff, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.2, length 28
+14:21:33.491673 00:00:00:00:00:02 > ff:ff:ff:ff:ff:ff, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.2, length 28
+14:21:38.770765 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+14:21:38.770850 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+14:21:38.771233 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.2, length 28
+=== r3 puerto 3 ===
+reading from file capturas/arranque_r3_p3.pcap, link-type EN10MB (Ethernet), snapshot length 262144
+14:21:33.477018 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+14:21:33.489511 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+14:21:33.501936 00:00:00:00:00:03 > ff:ff:ff:ff:ff:ff, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.3, length 28
+14:21:38.770262 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.3, length 28
+14:21:38.771224 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.3, length 28
+14:21:38.771817 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+=== r3 puerto 4 ===
+reading from file capturas/arranque_r3_p4.pcap, link-type EN10MB (Ethernet), snapshot length 262144
+14:21:33.479472 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+14:21:33.491976 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+14:21:33.502297 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+14:21:38.770248 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.4, length 28
+14:21:38.771221 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.4, length 28
+14:21:38.771226 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.4, length 28
+=== r4 puerto 1 ===
+reading from file capturas/arranque_r4_p1.pcap, link-type EN10MB (Ethernet), snapshot length 262144
+14:23:11.532210 00:00:00:00:00:01 > ff:ff:ff:ff:ff:ff, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.1, length 28
+14:23:11.535266 00:00:00:00:00:01 > ff:ff:ff:ff:ff:ff, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.1, length 28
+14:23:11.537351 00:00:00:00:00:01 > ff:ff:ff:ff:ff:ff, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.1, length 28
+14:23:16.563579 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+14:23:16.563945 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+14:23:16.564201 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+=== r4 puerto 2 ===
+reading from file capturas/arranque_r4_p2.pcap, link-type EN10MB (Ethernet), snapshot length 262144
+14:23:11.532975 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+14:23:11.540842 00:00:00:00:00:02 > ff:ff:ff:ff:ff:ff, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.2, length 28
+14:23:11.543019 00:00:00:00:00:02 > ff:ff:ff:ff:ff:ff, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.2, length 28
+14:23:16.562947 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.2, length 28
+14:23:16.563676 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+14:23:16.563809 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+=== r4 puerto 3 ===
+reading from file capturas/arranque_r4_p3.pcap, link-type EN10MB (Ethernet), snapshot length 262144
+14:23:11.535577 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+14:23:11.541111 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+14:23:11.555414 00:00:00:00:00:03 > ff:ff:ff:ff:ff:ff, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.3, length 28
+14:23:16.563115 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.3, length 28
+14:23:16.563224 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.3, length 28
+14:23:16.564092 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+=== r4 puerto 4 ===
+reading from file capturas/arranque_r4_p4.pcap, link-type EN10MB (Ethernet), snapshot length 262144
+14:23:11.537672 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+14:23:11.543304 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+14:23:11.555843 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+14:23:16.563103 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.4, length 28
+14:23:16.563219 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.4, length 28
+14:23:16.563222 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.4, length 28
+=== r5 puerto 1 ===
+reading from file capturas/arranque_r5_p1.pcap, link-type EN10MB (Ethernet), snapshot length 262144
+14:24:31.424335 00:00:00:00:00:01 > ff:ff:ff:ff:ff:ff, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.1, length 28
+14:24:31.429023 00:00:00:00:00:01 > ff:ff:ff:ff:ff:ff, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.1, length 28
+14:24:31.431431 00:00:00:00:00:01 > ff:ff:ff:ff:ff:ff, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.1, length 28
+14:24:36.436110 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+14:24:36.436224 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+14:24:36.436343 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+=== r5 puerto 2 ===
+reading from file capturas/arranque_r5_p2.pcap, link-type EN10MB (Ethernet), snapshot length 262144
+14:24:31.426368 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+14:24:31.440294 00:00:00:00:00:02 > ff:ff:ff:ff:ff:ff, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.2, length 28
+14:24:31.443870 00:00:00:00:00:02 > ff:ff:ff:ff:ff:ff, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.2, length 28
+14:24:36.435504 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.2, length 28
+14:24:36.948292 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+14:24:36.948559 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+=== r5 puerto 3 ===
+reading from file capturas/arranque_r5_p3.pcap, link-type EN10MB (Ethernet), snapshot length 262144
+14:24:31.429397 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+14:24:31.441097 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+14:24:31.454507 00:00:00:00:00:03 > ff:ff:ff:ff:ff:ff, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.3, length 28
+14:24:36.435547 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.3, length 28
+14:24:36.947621 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.3, length 28
+14:24:36.948348 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+=== r5 puerto 4 ===
+reading from file capturas/arranque_r5_p4.pcap, link-type EN10MB (Ethernet), snapshot length 262144
+14:24:31.431810 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+14:24:31.444330 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+14:24:31.457893 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+14:24:36.435487 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.4, length 28
+14:24:36.947609 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.4, length 28
+14:24:36.948006 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.4, length 28

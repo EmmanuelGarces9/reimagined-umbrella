@@ -1,0 +1,32 @@
+=== puerto 1 ===
+reading from file capturas/arranque_r1_p1.pcap, link-type EN10MB (Ethernet), snapshot length 262144
+14:08:21.841907 ARP, Request who-has 10.0.0.2 tell 10.0.0.1, length 28
+14:08:21.847644 ARP, Request who-has 10.0.0.3 tell 10.0.0.1, length 28
+14:08:21.849863 ARP, Request who-has 10.0.0.4 tell 10.0.0.1, length 28
+14:08:27.219076 ARP, Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+14:08:27.219480 ARP, Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+14:08:27.219598 ARP, Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+=== puerto 2 ===
+reading from file capturas/arranque_r1_p2.pcap, link-type EN10MB (Ethernet), snapshot length 262144
+14:08:21.842367 ARP, Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+14:08:21.853114 ARP, Request who-has 10.0.0.3 tell 10.0.0.2, length 28
+14:08:21.854909 ARP, Request who-has 10.0.0.4 tell 10.0.0.2, length 28
+14:08:27.218544 ARP, Request who-has 10.0.0.1 tell 10.0.0.2, length 28
+14:08:27.219186 ARP, Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+14:08:27.219339 ARP, Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+=== puerto 3 ===
+reading from file capturas/arranque_r1_p3.pcap, link-type EN10MB (Ethernet), snapshot length 262144
+14:08:21.848022 ARP, Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+14:08:21.853400 ARP, Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+14:08:21.859525 ARP, Request who-has 10.0.0.4 tell 10.0.0.3, length 28
+14:08:27.218576 ARP, Request who-has 10.0.0.2 tell 10.0.0.3, length 28
+14:08:27.218603 ARP, Request who-has 10.0.0.1 tell 10.0.0.3, length 28
+14:08:27.219845 ARP, Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+=== puerto 4 ===
+reading from file capturas/arranque_r1_p4.pcap, link-type EN10MB (Ethernet), snapshot length 262144
+14:08:21.850176 ARP, Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+14:08:21.855162 ARP, Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+14:08:21.859792 ARP, Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+14:08:27.218569 ARP, Request who-has 10.0.0.2 tell 10.0.0.4, length 28
+14:08:27.218598 ARP, Request who-has 10.0.0.1 tell 10.0.0.4, length 28
+14:08:27.219243 ARP, Request who-has 10.0.0.3 tell 10.0.0.4, length 28

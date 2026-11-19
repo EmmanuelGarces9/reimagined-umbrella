@@ -1,0 +1,990 @@
+=== continuo r3 puerto 1 ===
+reading from file capturas/continuo_r3_p1.pcap, link-type EN10MB (Ethernet), snapshot length 262144
+15:35:44.313506 00:00:00:00:00:01 > ff:ff:ff:ff:ff:ff, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.1, length 28
+15:35:44.313506 00:00:00:00:00:01 > ff:ff:ff:ff:ff:ff, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.1, length 28
+15:35:44.313710 00:00:00:00:00:01 > ff:ff:ff:ff:ff:ff, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.1, length 28
+15:35:44.314956 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:35:49.586686 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:35:49.588022 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:36:06.483265 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:36:07.507120 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.1, length 28
+15:36:07.507548 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.1, length 28
+15:36:07.507554 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.1, length 28
+15:36:19.798405 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:36:29.011389 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:36:31.059314 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.1, length 28
+15:36:31.059322 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.1, length 28
+15:36:31.059421 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.1, length 28
+15:36:40.275648 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:36:50.514815 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:36:51.539464 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:36:54.610759 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.1, length 28
+15:36:54.611229 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.1, length 28
+15:36:54.611283 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.1, length 28
+15:37:14.068367 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:37:18.162272 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.1, length 28
+15:37:18.162280 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.1, length 28
+15:37:18.162451 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.1, length 28
+15:37:21.234637 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:37:33.524424 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:37:36.595252 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:37:41.714699 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.1, length 28
+15:37:41.714836 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.1, length 28
+15:37:41.714841 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.1, length 28
+15:37:51.955782 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:37:59.123479 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:38:05.266908 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.1, length 28
+15:38:05.266978 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.1, length 28
+15:38:05.267043 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.1, length 28
+15:38:21.651072 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:38:22.674846 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:38:26.772305 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:38:28.818704 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.1, length 28
+15:38:28.819230 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.1, length 28
+15:38:28.819234 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.1, length 28
+15:38:44.179750 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:38:52.370560 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.1, length 28
+15:38:52.370638 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.1, length 28
+15:38:52.371230 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.1, length 28
+15:38:53.395672 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:39:06.707140 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:39:15.922389 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.1, length 28
+15:39:15.922414 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.1, length 28
+15:39:15.922421 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.1, length 28
+15:39:20.019078 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:39:24.116733 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:39:29.235770 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:39:39.474493 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.1, length 28
+15:39:39.474500 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.1, length 28
+15:39:39.474686 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.1, length 28
+15:39:51.763368 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:39:54.835320 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:40:03.026724 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.1, length 28
+15:40:03.026734 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.1, length 28
+15:40:03.026739 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.1, length 28
+15:40:13.267584 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:40:14.291722 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:40:25.556525 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:40:26.578516 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.1, length 28
+15:40:26.578523 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.1, length 28
+15:40:26.579209 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.1, length 28
+15:40:36.819088 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:40:56.274916 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:41:04.979080 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:41:06.517555 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:41:10.610219 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.1, length 28
+15:41:10.611235 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.1, length 28
+15:41:11.123168 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.1, length 28
+15:41:17.779119 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:41:33.139703 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:41:39.282932 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:41:55.666937 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.1, length 28
+15:41:55.666942 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.1, length 28
+15:41:55.667336 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.1, length 28
+15:41:55.667857 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:42:00.787431 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:42:01.300064 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:42:22.291257 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:42:29.459672 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:42:40.722527 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.1, length 28
+15:42:40.723227 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.1, length 28
+15:42:40.723243 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.1, length 28
+15:42:44.819040 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:42:44.819095 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:42:57.619238 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:43:06.323157 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:43:25.778642 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.1, length 28
+15:43:25.779226 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.1, length 28
+15:43:25.779228 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.1, length 28
+15:43:25.780290 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:43:28.851044 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:43:33.972189 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:43:51.379902 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:43:53.938876 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:44:10.322588 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.1, length 28
+15:44:10.834616 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.1, length 28
+15:44:10.835207 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.1, length 28
+15:44:13.907386 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:44:22.100645 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:44:23.122846 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:44:36.435039 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:44:50.258819 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:44:55.378657 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.1, length 28
+15:44:55.890710 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.1, length 28
+15:44:55.890788 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.1, length 28
+15:44:58.963260 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:45:12.276148 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:45:18.419613 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:45:21.490966 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:45:40.946544 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.1, length 28
+15:45:40.946549 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.1, length 28
+15:45:41.461217 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.1, length 28
+15:45:44.019594 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:45:46.579838 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+=== continuo r3 puerto 2 ===
+reading from file capturas/continuo_r3_p2.pcap, link-type EN10MB (Ethernet), snapshot length 262144
+15:35:44.314644 00:00:00:00:00:02 > ff:ff:ff:ff:ff:ff, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.2, length 28
+15:35:44.314907 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:35:44.315879 00:00:00:00:00:02 > ff:ff:ff:ff:ff:ff, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.2, length 28
+15:35:44.315964 00:00:00:00:00:02 > ff:ff:ff:ff:ff:ff, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.2, length 28
+15:35:49.587904 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:35:49.587952 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:36:06.482623 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.2, length 28
+15:36:06.482629 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.2, length 28
+15:36:06.482631 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.2, length 28
+15:36:07.508317 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:36:19.798676 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:36:29.010660 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.2, length 28
+15:36:29.010758 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.2, length 28
+15:36:29.010758 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.2, length 28
+15:36:31.060305 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:36:40.275831 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:36:50.515110 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:36:51.538557 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.2, length 28
+15:36:51.539052 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.2, length 28
+15:36:51.539057 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.2, length 28
+15:36:54.611523 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:37:14.067592 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.2, length 28
+15:37:14.067595 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.2, length 28
+15:37:14.067601 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.2, length 28
+15:37:18.163086 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:37:21.234769 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:37:33.524594 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:37:36.594329 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.2, length 28
+15:37:36.594337 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.2, length 28
+15:37:36.594641 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.2, length 28
+15:37:41.715493 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:37:51.956069 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:37:59.122629 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.2, length 28
+15:37:59.122629 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.2, length 28
+15:37:59.122642 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.2, length 28
+15:38:05.267666 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:38:21.650489 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.2, length 28
+15:38:21.650578 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.2, length 28
+15:38:21.651236 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.2, length 28
+15:38:22.675098 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:38:26.772434 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:38:28.819311 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:38:44.179191 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.2, length 28
+15:38:44.179198 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.2, length 28
+15:38:44.180211 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.2, length 28
+15:38:52.371026 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:38:53.395763 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:39:06.194888 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.2, length 28
+15:39:06.706530 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.2, length 28
+15:39:06.706715 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.2, length 28
+15:39:15.922860 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:39:19.507475 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:39:24.116944 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:39:28.723264 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.2, length 28
+15:39:29.235244 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.2, length 28
+15:39:29.235252 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.2, length 28
+15:39:39.475334 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:39:50.738277 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.2, length 28
+15:39:51.762896 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.2, length 28
+15:39:51.762896 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.2, length 28
+15:39:54.835461 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:40:03.027311 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:40:08.658975 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:40:12.754732 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.2, length 28
+15:40:14.291267 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.2, length 28
+15:40:14.292289 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.2, length 28
+15:40:25.556683 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:40:26.579603 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:40:34.772274 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.2, length 28
+15:40:36.818350 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.2, length 28
+15:40:36.818370 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.2, length 28
+15:40:56.275142 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:40:57.812087 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:41:02.931344 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.2, length 28
+15:41:04.466430 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.2, length 28
+15:41:04.978448 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.2, length 28
+15:41:11.123614 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:41:17.779372 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:41:30.578853 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.2, length 28
+15:41:32.114888 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.2, length 28
+15:41:33.139168 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.2, length 28
+15:41:39.282804 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:41:46.963459 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:41:55.667720 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:41:58.227295 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.2, length 28
+15:41:59.762612 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.2, length 28
+15:42:01.299580 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.2, length 28
+15:42:01.811452 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:42:24.338942 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:42:25.874878 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.2, length 28
+15:42:28.436223 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.2, length 28
+15:42:29.459235 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.2, length 28
+15:42:36.114822 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:42:40.723686 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:42:46.867116 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:42:53.523715 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.2, length 28
+15:42:57.107557 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.2, length 28
+15:42:57.618598 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.2, length 28
+15:43:09.394689 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:43:21.683091 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.2, length 28
+15:43:25.779231 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.2, length 28
+15:43:25.779249 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.2, length 28
+15:43:25.779593 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:43:25.780007 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:43:31.922971 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:43:49.331156 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.2, length 28
+15:43:53.938483 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.2, length 28
+15:43:54.450851 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.2, length 28
+15:43:54.451742 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:44:10.323180 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:44:14.931048 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:44:16.978960 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.2, length 28
+15:44:16.979569 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:44:22.100211 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.2, length 28
+15:44:23.122249 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.2, length 28
+15:44:39.507103 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:44:44.627259 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.2, length 28
+15:44:50.258360 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.2, length 28
+15:44:51.794776 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.2, length 28
+15:44:55.379116 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:45:02.035570 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:45:04.084982 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:45:12.275328 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.2, length 28
+15:45:18.419220 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.2, length 28
+15:45:20.466501 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.2, length 28
+15:45:24.563138 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:45:39.924119 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.2, length 28
+15:45:41.461777 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:45:46.579065 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.2, length 28
+15:45:47.091671 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:45:49.138486 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.2, length 28
+=== continuo r3 puerto 3 ===
+reading from file capturas/continuo_r3_p3.pcap, link-type EN10MB (Ethernet), snapshot length 262144
+15:35:44.314214 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:35:44.316443 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:35:44.318505 00:00:00:00:00:03 > ff:ff:ff:ff:ff:ff, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.3, length 28
+15:35:44.320540 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:35:49.586222 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.3, length 28
+15:35:49.587641 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.3, length 28
+15:36:06.483210 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:36:07.507958 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:36:15.187918 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:36:29.011138 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:36:31.059826 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:36:36.691255 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.3, length 28
+15:36:40.275223 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.3, length 28
+15:36:40.275228 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.3, length 28
+15:36:45.907589 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:36:51.539145 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:36:54.611720 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:37:14.068503 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:37:16.627610 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:37:18.162813 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:37:29.939235 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.3, length 28
+15:37:33.523990 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.3, length 28
+15:37:33.523997 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.3, length 28
+15:37:36.594871 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:37:41.715596 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:37:47.347681 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:37:59.123364 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:38:05.267792 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:38:18.067678 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:38:21.651739 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:38:23.187688 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.3, length 28
+15:38:26.771650 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.3, length 28
+15:38:26.771658 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.3, length 28
+15:38:28.819629 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:38:44.180557 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:38:48.788261 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:38:52.371182 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:39:06.195380 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:39:15.923014 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:39:16.434504 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.3, length 28
+15:39:19.506782 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.3, length 28
+15:39:19.507616 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:39:20.018687 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.3, length 28
+15:39:28.723679 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:39:39.474988 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:39:50.226633 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:39:50.738743 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:40:03.027165 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:40:08.658334 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.3, length 28
+15:40:09.682217 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.3, length 28
+15:40:12.755210 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:40:13.267213 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.3, length 28
+15:40:20.947674 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:40:26.578997 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:40:34.772730 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:40:51.668859 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:40:57.811502 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.3, length 28
+15:41:02.931335 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.3, length 28
+15:41:02.931743 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:41:06.517049 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.3, length 28
+15:41:10.610626 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:41:14.195978 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:41:30.579403 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:41:36.723556 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:41:46.962887 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.3, length 28
+15:41:52.083216 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.3, length 28
+15:41:55.667333 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.3, length 28
+15:41:55.667360 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:41:58.227737 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:41:59.251956 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:42:21.779779 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:42:25.875556 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:42:36.114264 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.3, length 28
+15:42:40.723555 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:42:41.234920 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.3, length 28
+15:42:44.308923 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:42:44.818489 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.3, length 28
+15:42:53.524336 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:43:06.835521 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:43:21.683767 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:43:25.779159 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:43:25.779223 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.3, length 28
+15:43:29.363746 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:43:30.387807 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.3, length 28
+15:43:33.971711 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.3, length 28
+15:43:49.331625 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:43:51.891500 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:44:10.835050 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:44:14.419242 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:44:14.930665 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.3, length 28
+15:44:16.979408 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:44:19.542342 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.3, length 28
+15:44:23.122241 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.3, length 28
+15:44:36.947667 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:44:44.627725 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:44:55.891188 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:44:59.475351 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:45:04.084465 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.3, length 28
+15:45:08.690266 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.3, length 28
+15:45:12.275181 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.3, length 28
+15:45:12.275812 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:45:22.004646 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:45:39.924557 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:45:40.946971 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:45:44.530974 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+=== continuo r3 puerto 4 ===
+reading from file capturas/continuo_r3_p4.pcap, link-type EN10MB (Ethernet), snapshot length 262144
+15:35:44.314938 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:35:44.316630 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:35:44.319847 00:00:00:00:00:04 > ff:ff:ff:ff:ff:ff, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.4, length 28
+15:35:44.320487 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:35:49.587647 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.4, length 28
+15:35:49.587650 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.4, length 28
+15:36:06.483038 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:36:07.507574 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:36:15.187347 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.4, length 28
+15:36:19.797699 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.4, length 28
+15:36:19.797707 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.4, length 28
+15:36:29.011360 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:36:31.060188 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:36:36.691698 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:36:45.907141 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.4, length 28
+15:36:50.514281 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.4, length 28
+15:36:50.514468 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.4, length 28
+15:36:51.539625 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:36:54.611264 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:37:14.068119 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:37:16.627084 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.4, length 28
+15:37:18.162928 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:37:21.234210 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.4, length 28
+15:37:21.234218 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.4, length 28
+15:37:29.939684 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:37:36.594832 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:37:41.715768 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:37:47.347242 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.4, length 28
+15:37:51.955366 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.4, length 28
+15:37:51.955374 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.4, length 28
+15:37:59.123094 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:38:05.267495 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:38:18.067081 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.4, length 28
+15:38:21.650907 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:38:22.674425 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.4, length 28
+15:38:22.674433 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.4, length 28
+15:38:23.188157 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:38:28.819814 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:38:44.179622 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:38:48.787787 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.4, length 28
+15:38:52.371778 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:38:53.395213 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.4, length 28
+15:38:53.395220 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.4, length 28
+15:39:06.707407 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:39:15.922773 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:39:16.434938 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:39:19.506792 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.4, length 28
+15:39:24.116081 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.4, length 28
+15:39:24.116089 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.4, length 28
+15:39:29.235645 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:39:39.475121 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:39:50.226212 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.4, length 28
+15:39:51.763247 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:39:54.834698 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.4, length 28
+15:39:54.834706 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.4, length 28
+15:40:03.027116 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:40:09.682798 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:40:14.292620 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:40:20.947233 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.4, length 28
+15:40:25.556064 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.4, length 28
+15:40:25.556070 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.4, length 28
+15:40:26.579241 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:40:36.818789 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:40:51.668408 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.4, length 28
+15:40:56.274464 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.4, length 28
+15:40:56.274472 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.4, length 28
+15:41:02.931879 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:41:04.466923 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:41:10.611613 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:41:14.195287 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.4, length 28
+15:41:17.778670 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.4, length 28
+15:41:17.778719 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.4, length 28
+15:41:32.115337 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:41:36.723030 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.4, length 28
+15:41:39.282213 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.4, length 28
+15:41:39.282208 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.4, length 28
+15:41:52.083637 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:41:55.667416 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:41:59.251401 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.4, length 28
+15:41:59.763307 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:42:00.786988 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.4, length 28
+15:42:01.810892 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.4, length 28
+15:42:21.779371 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.4, length 28
+15:42:22.290543 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.4, length 28
+15:42:24.338383 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.4, length 28
+15:42:28.436591 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:42:40.723027 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:42:41.235650 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:42:44.308244 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.4, length 28
+15:42:44.818498 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.4, length 28
+15:42:46.866502 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.4, length 28
+15:42:57.108241 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:43:06.322711 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.4, length 28
+15:43:06.834794 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.4, length 28
+15:43:09.394341 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.4, length 28
+15:43:25.779767 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:43:25.779853 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:43:28.850523 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.4, length 28
+15:43:29.363450 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.4, length 28
+15:43:30.388371 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:43:31.922305 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.4, length 28
+15:43:51.379212 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.4, length 28
+15:43:51.890953 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.4, length 28
+15:43:54.450836 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.4, length 28
+15:43:54.451461 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:44:10.835694 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:44:13.906927 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.4, length 28
+15:44:14.418657 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.4, length 28
+15:44:16.978951 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.4, length 28
+15:44:19.542918 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:44:23.122668 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:44:36.434637 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.4, length 28
+15:44:36.947174 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.4, length 28
+15:44:39.506673 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.4, length 28
+15:44:51.795174 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:44:55.891378 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:44:58.962824 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.4, length 28
+15:44:59.474660 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.4, length 28
+15:45:02.035091 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.4, length 28
+15:45:08.690498 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:45:20.467004 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:45:21.490565 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.4, length 28
+15:45:22.003981 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.4, length 28
+15:45:24.562497 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.4, length 28
+15:45:40.947057 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:45:44.019250 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.4, length 28
+15:45:44.530576 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.4, length 28
+15:45:47.091135 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.4, length 28
+15:45:49.139018 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+=== continuo r4 puerto 1 ===
+reading from file capturas/continuo_r4_p1.pcap, link-type EN10MB (Ethernet), snapshot length 262144
+15:46:24.186024 00:00:00:00:00:01 > ff:ff:ff:ff:ff:ff, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.1, length 28
+15:46:24.186145 00:00:00:00:00:01 > ff:ff:ff:ff:ff:ff, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.1, length 28
+15:46:24.186512 00:00:00:00:00:01 > ff:ff:ff:ff:ff:ff, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.1, length 28
+15:46:29.586934 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:46:29.587924 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:46:29.587984 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:46:45.458741 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.1, length 28
+15:46:45.458748 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.1, length 28
+15:46:45.458794 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.1, length 28
+15:46:54.674950 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:46:57.235092 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:47:00.818923 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:47:06.450210 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.1, length 28
+15:47:06.450210 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.1, length 28
+15:47:06.962591 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.1, length 28
+15:47:19.251835 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:47:24.883899 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:47:27.442644 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.1, length 28
+15:47:27.442637 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.1, length 28
+15:47:28.467156 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.1, length 28
+15:47:31.539697 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:47:43.827480 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:47:47.922890 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.1, length 28
+15:47:48.435099 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.1, length 28
+15:47:49.971277 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.1, length 28
+15:47:52.531057 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:48:02.258644 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:48:08.404787 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.1, length 28
+15:48:08.405376 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:48:09.430261 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.1, length 28
+15:48:11.475438 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.1, length 28
+15:48:20.179527 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:48:28.882946 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.1, length 28
+15:48:30.418264 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.1, length 28
+15:48:32.978603 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.1, length 28
+15:48:32.979301 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:48:32.979883 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:48:47.828871 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:48:49.362824 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.1, length 28
+15:48:51.410652 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.1, length 28
+15:48:54.483032 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.1, length 28
+15:48:57.555645 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:49:03.699599 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:49:09.842463 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.1, length 28
+15:49:12.402628 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.1, length 28
+15:49:15.475638 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:49:15.987546 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.1, length 28
+15:49:22.132756 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:49:30.322964 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.1, length 28
+15:49:33.394235 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.1, length 28
+15:49:34.419013 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:49:37.490389 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.1, length 28
+15:49:43.123606 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:49:46.708375 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:49:50.802507 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.1, length 28
+15:49:54.388337 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.1, length 28
+15:49:58.994705 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.1, length 28
+15:50:05.139726 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:50:10.770719 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:50:11.282280 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.1, length 28
+15:50:11.282838 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:50:14.866428 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.1, length 28
+15:50:20.499052 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.1, length 28
+15:50:31.762725 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.1, length 28
+15:50:35.347208 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.1, length 28
+15:50:35.858742 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:50:35.858773 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:50:38.420508 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:50:42.002211 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.1, length 28
+15:50:52.242463 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.1, length 28
+15:50:55.827704 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.1, length 28
+15:51:01.458825 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:51:09.650870 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:51:25.010877 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.1, length 28
+15:51:28.090067 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:51:28.595002 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:51:35.251179 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.1, length 28
+15:51:38.834401 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.1, length 28
+15:51:43.442726 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:51:54.707611 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:52:10.066266 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.1, length 28
+15:52:17.235859 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:52:18.258466 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.1, length 28
+15:52:21.331255 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:52:21.843130 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.1, length 28
+15:52:21.843782 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:52:47.954962 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:52:51.027530 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:52:55.122809 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.1, length 28
+15:53:03.314219 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.1, length 28
+15:53:06.898965 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.1, length 28
+15:53:14.579530 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:53:15.091045 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:53:24.819089 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:53:40.178472 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.1, length 28
+15:53:41.202927 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:53:48.371224 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.1, length 28
+15:53:51.954223 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.1, length 28
+15:53:58.612534 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:54:07.826842 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:54:08.851298 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:54:25.234499 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.1, length 28
+15:54:32.403196 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:54:33.427920 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.1, length 28
+15:54:34.451636 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:54:37.522484 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.1, length 28
+15:55:01.074960 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:55:02.099835 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:55:06.195857 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:55:10.292240 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.1, length 28
+15:55:18.482360 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.1, length 28
+15:55:22.578228 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.1, length 28
+15:55:27.700428 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:55:39.475595 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:55:54.323759 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:55:54.834687 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.1, length 28
+15:55:55.347528 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:56:03.538869 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.1, length 28
+15:56:07.634623 00:00:00:00:00:01 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.1, length 28
+15:56:13.267757 00:00:00:00:00:01 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+15:56:20.948828 00:00:00:00:00:01 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.1 is-at 00:00:00:00:00:01, length 28
+=== continuo r4 puerto 2 ===
+reading from file capturas/continuo_r4_p2.pcap, link-type EN10MB (Ethernet), snapshot length 262144
+15:46:24.186930 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:46:24.188448 00:00:00:00:00:02 > ff:ff:ff:ff:ff:ff, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.2, length 28
+15:46:24.188770 00:00:00:00:00:02 > ff:ff:ff:ff:ff:ff, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.2, length 28
+15:46:29.586363 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.2, length 28
+15:46:29.587701 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:46:29.587842 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:46:45.459430 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:46:49.554590 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.2, length 28
+15:46:49.554651 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.2, length 28
+15:46:54.674462 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.2, length 28
+15:46:57.748521 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:47:00.819573 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:47:06.450882 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:47:15.154501 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.2, length 28
+15:47:15.154516 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.2, length 28
+15:47:19.251260 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.2, length 28
+15:47:25.395357 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:47:27.443238 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:47:31.539592 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:47:40.754856 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.2, length 28
+15:47:40.754863 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.2, length 28
+15:47:43.827007 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.2, length 28
+15:47:47.923340 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:47:53.043908 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:48:02.258734 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:48:06.355773 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.2, length 28
+15:48:06.355781 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.2, length 28
+15:48:08.404796 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.2, length 28
+15:48:08.405244 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:48:20.691104 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:48:28.883409 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:48:31.954468 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.2, length 28
+15:48:31.954468 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.2, length 28
+15:48:32.979070 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:48:32.979250 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.2, length 28
+15:48:48.338993 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:48:49.363243 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:48:57.555060 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.2, length 28
+15:48:57.555207 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.2, length 28
+15:48:57.555228 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.2, length 28
+15:49:03.699524 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:49:09.842889 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:49:15.475586 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:49:22.132210 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.2, length 28
+15:49:22.643309 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.2, length 28
+15:49:23.155082 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.2, length 28
+15:49:30.323468 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:49:34.419170 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:49:43.123337 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:49:46.707814 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.2, length 28
+15:49:47.221320 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.2, length 28
+15:49:48.755208 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.2, length 28
+15:49:50.802931 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:50:05.139827 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:50:10.772429 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:50:11.282289 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.2, length 28
+15:50:11.282713 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:50:11.795248 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.2, length 28
+15:50:14.354454 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.2, length 28
+15:50:31.763130 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:50:35.858222 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.2, length 28
+15:50:35.859586 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:50:36.370679 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.2, length 28
+15:50:38.420605 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:50:39.954515 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.2, length 28
+15:50:52.242957 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:51:00.946924 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.2, length 28
+15:51:01.458390 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.2, length 28
+15:51:06.579230 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.2, length 28
+15:51:09.651596 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:51:27.571198 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.2, length 28
+15:51:28.089468 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.2, length 28
+15:51:28.594769 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:51:33.202320 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.2, length 28
+15:51:35.251613 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:51:43.442997 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:51:54.195185 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.2, length 28
+15:51:54.707235 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.2, length 28
+15:51:59.828339 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.2, length 28
+15:52:17.236011 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:52:18.258921 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:52:20.818696 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.2, length 28
+15:52:21.330667 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.2, length 28
+15:52:22.355654 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:52:26.452618 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.2, length 28
+15:52:47.442524 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.2, length 28
+15:52:47.954483 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.2, length 28
+15:52:51.027676 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:52:53.075066 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.2, length 28
+15:53:03.314741 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:53:14.066576 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.2, length 28
+15:53:14.579012 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.2, length 28
+15:53:15.602992 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:53:19.698655 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.2, length 28
+15:53:24.819239 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:53:40.690493 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.2, length 28
+15:53:41.202483 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.2, length 28
+15:53:46.322926 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.2, length 28
+15:53:48.371662 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:53:58.612686 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:54:07.315224 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.2, length 28
+15:54:07.826376 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.2, length 28
+15:54:08.340514 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:54:12.947673 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.2, length 28
+15:54:32.403393 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:54:33.428320 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:54:33.939323 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.2, length 28
+15:54:34.451329 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.2, length 28
+15:54:39.570505 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.2, length 28
+15:55:00.562280 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.2, length 28
+15:55:01.074392 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.2, length 28
+15:55:01.587806 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:55:06.195328 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:55:06.195323 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.2, length 28
+15:55:18.482905 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:55:27.187241 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.2, length 28
+15:55:27.699739 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.2, length 28
+15:55:32.818218 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.2, length 28
+15:55:39.986659 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:55:53.811005 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.2, length 28
+15:55:54.323350 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.2, length 28
+15:55:54.835339 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:55:59.443264 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.2, length 28
+15:56:03.539542 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:56:13.778987 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.2 is-at 00:00:00:00:00:02, length 28
+15:56:20.435095 00:00:00:00:00:02 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.2, length 28
+15:56:20.948255 00:00:00:00:00:02 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.2, length 28
+15:56:26.066593 00:00:00:00:00:02 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.2, length 28
+=== continuo r4 puerto 3 ===
+reading from file capturas/continuo_r4_p3.pcap, link-type EN10MB (Ethernet), snapshot length 262144
+15:46:24.187029 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:46:24.188909 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:46:24.190991 00:00:00:00:00:03 > ff:ff:ff:ff:ff:ff, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.3, length 28
+15:46:24.192419 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:46:29.587331 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.3, length 28
+15:46:29.587332 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.3, length 28
+15:46:45.459523 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:46:49.555010 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:46:51.603567 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:46:54.674387 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.3, length 28
+15:47:00.818515 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.3, length 28
+15:47:00.819219 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.3, length 28
+15:47:06.962856 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:47:15.155087 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:47:19.251766 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:47:25.394794 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.3, length 28
+15:47:28.467578 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:47:31.539104 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.3, length 28
+15:47:31.539214 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.3, length 28
+15:47:40.755329 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:47:46.899505 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:47:49.971674 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:47:56.114842 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.3, length 28
+15:48:02.258208 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.3, length 28
+15:48:02.258284 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.3, length 28
+15:48:06.356318 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:48:11.475840 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:48:14.546947 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:48:26.834582 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.3, length 28
+15:48:31.954943 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:48:32.978634 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.3, length 28
+15:48:32.978639 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.3, length 28
+15:48:32.978987 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:48:41.682870 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:48:54.483536 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:48:57.042519 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.3, length 28
+15:48:57.555550 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:49:03.699040 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.3, length 28
+15:49:03.699047 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.3, length 28
+15:49:09.330848 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:49:15.987962 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:49:23.155546 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:49:27.762537 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.3, length 28
+15:49:34.418541 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.3, length 28
+15:49:34.418598 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.3, length 28
+15:49:36.981906 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:49:37.490803 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:49:48.755491 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:49:58.482391 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.3, length 28
+15:49:58.995241 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:50:04.627633 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:50:05.139368 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.3, length 28
+15:50:05.139371 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.3, length 28
+15:50:14.354826 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:50:20.499610 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:50:29.203186 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.3, length 28
+15:50:32.275739 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:50:35.858222 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.3, length 28
+15:50:35.859338 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.3, length 28
+15:50:39.954966 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:50:42.002501 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:50:59.922388 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.3, length 28
+15:50:59.923047 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:51:06.579608 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:51:09.650409 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.3, length 28
+15:51:09.651235 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.3, length 28
+15:51:25.011403 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:51:33.202870 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:51:33.714645 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.3, length 28
+15:51:43.442295 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.3, length 28
+15:51:43.442335 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.3, length 28
+15:51:53.171278 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:51:59.828554 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:52:07.507293 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.3, length 28
+15:52:10.066776 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:52:17.235280 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.3, length 28
+15:52:17.235331 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.3, length 28
+15:52:26.453220 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:52:41.301817 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.3, length 28
+15:52:46.419506 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:52:51.026923 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.3, length 28
+15:52:51.026923 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.3, length 28
+15:52:53.075761 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:52:55.123297 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:53:15.090473 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.3, length 28
+15:53:19.699208 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:53:24.818740 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.3, length 28
+15:53:24.818754 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.3, length 28
+15:53:40.178877 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:53:40.691027 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:53:46.323326 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:53:48.882467 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.3, length 28
+15:53:58.612008 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.3, length 28
+15:53:58.612086 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.3, length 28
+15:54:12.947935 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:54:22.675394 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.3, length 28
+15:54:25.235001 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:54:32.402574 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.3, length 28
+15:54:32.402574 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.3, length 28
+15:54:32.915126 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:54:39.571060 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:54:56.467392 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.3, length 28
+15:55:06.194855 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.3, length 28
+15:55:06.195328 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.3, length 28
+15:55:06.196007 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:55:10.292601 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:55:27.187606 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:55:30.260302 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.3, length 28
+15:55:32.818721 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:55:39.475172 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.3, length 28
+15:55:39.986236 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.3, length 28
+15:55:54.835153 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:55:59.443635 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:56:03.538857 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.4 tell 10.0.0.3, length 28
+15:56:13.267355 00:00:00:00:00:03 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.3, length 28
+15:56:13.778425 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.3, length 28
+15:56:19.922668 00:00:00:00:00:03 > 00:00:00:00:00:04, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+15:56:26.067171 00:00:00:00:00:03 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.3 is-at 00:00:00:00:00:03, length 28
+=== continuo r4 puerto 4 ===
+reading from file capturas/continuo_r4_p4.pcap, link-type EN10MB (Ethernet), snapshot length 262144
+15:46:24.187054 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:46:24.189129 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:46:24.191943 00:00:00:00:00:04 > ff:ff:ff:ff:ff:ff, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.4, length 28
+15:46:24.192357 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:46:29.587324 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.4, length 28
+15:46:29.587338 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.4, length 28
+15:46:45.459251 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:46:49.555114 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:46:51.603167 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.4, length 28
+15:46:54.675129 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:46:57.234522 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.4, length 28
+15:46:57.747988 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.4, length 28
+15:47:06.450749 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:47:15.154959 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:47:19.251212 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.4, length 28
+15:47:24.883422 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.4, length 28
+15:47:25.394804 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.4, length 28
+15:47:25.395247 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:47:27.443079 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:47:40.755401 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:47:46.899060 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.4, length 28
+15:47:48.435641 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:47:52.530584 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.4, length 28
+15:47:53.043417 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.4, length 28
+15:47:56.115325 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:48:06.356478 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:48:09.430705 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:48:14.546469 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.4, length 28
+15:48:20.178832 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.4, length 28
+15:48:20.690565 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.4, length 28
+15:48:26.835086 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:48:30.418776 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:48:31.954882 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:48:41.682472 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.4, length 28
+15:48:47.828250 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.4, length 28
+15:48:48.338578 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.4, length 28
+15:48:51.411239 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:48:57.043010 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:48:57.555818 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:49:09.330437 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.4, length 28
+15:49:12.403042 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:49:15.475222 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.4, length 28
+15:49:15.475229 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.4, length 28
+15:49:22.643802 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:49:27.762959 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:49:33.394574 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:49:36.981370 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.4, length 28
+15:49:43.122899 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.4, length 28
+15:49:43.122907 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.4, length 28
+15:49:47.221799 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:49:54.388650 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:49:58.482974 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:50:04.627271 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.4, length 28
+15:50:10.770259 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.4, length 28
+15:50:10.772202 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.4, length 28
+15:50:11.795526 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:50:14.866913 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:50:29.203770 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:50:32.275211 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.4, length 28
+15:50:35.347540 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:50:36.371125 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:50:38.420037 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.4, length 28
+15:50:38.420091 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.4, length 28
+15:50:55.828314 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:50:59.922359 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.4, length 28
+15:50:59.922913 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:51:00.947314 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:51:27.571671 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:51:28.594318 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.4, length 28
+15:51:28.594397 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.4, length 28
+15:51:33.715142 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:51:38.834834 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:51:53.170730 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.4, length 28
+15:51:54.195601 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:52:07.507899 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:52:20.819302 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:52:21.843336 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.4, length 28
+15:52:21.843677 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:52:22.355162 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.4, length 28
+15:52:41.302575 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:52:46.419025 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.4, length 28
+15:52:47.442918 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:53:06.899520 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:53:14.067007 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:53:15.090480 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.4, length 28
+15:53:15.090933 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:53:15.602454 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.4, length 28
+15:53:40.690500 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.4, length 28
+15:53:40.690905 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:53:48.883092 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:53:51.954817 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:54:07.315701 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:54:08.339857 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.4, length 28
+15:54:08.850777 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.4, length 28
+15:54:22.675976 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:54:32.914560 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.4, length 28
+15:54:33.939912 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:54:37.522999 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:54:56.468097 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:55:00.562740 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:55:01.587431 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.4, length 28
+15:55:02.099425 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.4, length 28
+15:55:22.581023 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:55:27.186984 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.4, length 28
+15:55:27.187828 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:55:30.260728 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:55:53.811635 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:55:54.834696 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.2 tell 10.0.0.4, length 28
+15:55:55.347128 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.1 tell 10.0.0.4, length 28
+15:56:03.539652 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:56:07.635227 00:00:00:00:00:04 > 00:00:00:00:00:01, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+15:56:19.922223 00:00:00:00:00:04 > 00:00:00:00:00:03, ethertype ARP (0x0806), length 42: Request who-has 10.0.0.3 tell 10.0.0.4, length 28
+15:56:20.435475 00:00:00:00:00:04 > 00:00:00:00:00:02, ethertype ARP (0x0806), length 42: Reply 10.0.0.4 is-at 00:00:00:00:00:04, length 28
+=== continuo r5 puerto 1 ===
+tcpdump: truncated dump file; tried to read 4 file header bytes, only got 0
+=== continuo r5 puerto 2 ===
+tcpdump: truncated dump file; tried to read 4 file header bytes, only got 0
+=== continuo r5 puerto 3 ===
+tcpdump: truncated dump file; tried to read 4 file header bytes, only got 0
+=== continuo r5 puerto 4 ===
+tcpdump: truncated dump file; tried to read 4 file header bytes, only got 0

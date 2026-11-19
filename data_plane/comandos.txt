@@ -1,0 +1,86 @@
+# ============================================================
+# PREPARACION
+# ============================================================
+
+# Crear las carpetas necesarias (antes de compilar)
+mkdir -p build logs
+
+# Compilar codigo p4
+# OJO: cambiar "p4file" por el nombre real en los 2 lugares
+# y verificar que el controller.py use el mismo nombre por defecto
+p4c-bm2-ss --p4v 16 --p4runtime-files build/p4file.p4.p4info.txtpb -o build/p4file.json p4file.p4
+
+
+# ============================================================
+# ARRANQUE (cada uno en su propia terminal)
+# ============================================================
+
+# Terminal 1: arrancar la topologia
+sudo python3 topology.py
+
+# Terminal 2: conectar el switch p4 a la topologia
+# OJO: cambiar "p4file" por el nombre real
+sudo simple_switch_grpc -i 1@s1-eth1 -i 2@s1-eth2 -i 3@s1-eth3 -i 4@s1-eth4 --device-id 0 --log-console build/p4file.json -- --grpc-server-addr 0.0.0.0:50051 2>&1 | tee switch.log
+
+# Terminal 3: arrancar el controlador (instala reglas y termina)
+python3 controller.py
+
+
+# ============================================================
+# EN LOS HOSTS (dentro del xterm de cada host)
+# ============================================================
+
+# Servidor DHCP (en h1)
+dnsmasq -i h1-eth0 --dhcp-range=10.0.0.2,10.0.0.10 --dhcp-host=00:00:00:00:00:02,10.0.0.2 --dhcp-host=00:00:00:00:00:03,10.0.0.3 --dhcp-host=00:00:00:00:00:04,10.0.0.4 --no-daemon --log-dhcp
+
+# Pedir IP por DHCP (en h2, h3, h4; cambiar el nombre de la interfaz)
+dhclient -v h2-eth0
+
+# Borrar la cache ARP del host (para probar que el ARP se resuelve solo)
+ip neigh flush all
+
+# Detener servicios que quedaron corriendo de una prueba anterior
+pkill dnsmasq
+pkill dhclient
+
+
+# ============================================================
+# CLI DEL SWITCH
+# ============================================================
+
+# Abrir el CLI del switch
+# OJO: "RuntimeCmd:" es el prompt, NO se escribe
+simple_switch_CLI --thrift-port 9090
+
+# Leer un registro en una casilla (ejemplo: casilla 2)
+register_read MyIngress.reg_valid 2
+register_read MyIngress.reg_mac 2
+register_read MyIngress.reg_port 2
+
+# Leer todas las casillas de un registro (ejemplo: puertos bloqueados)
+register_read MyIngress.reg_blocked
+
+# Poner todo un registro en 0 (ejemplo: desbloquear todos los puertos para repetir pruebas)
+register_reset MyIngress.reg_blocked
+
+# Ver las reglas que instalo el controlador en una tabla
+table_dump MyIngress.mac_forw
+
+
+# ============================================================
+# REVISAR LOGS
+# ============================================================
+
+# Ver solo lo importante del log del switch (ultimas 30 lineas)
+grep -E "Wrote register|Dropping|Transmitting" switch.log | tail -30
+
+
+# ============================================================
+# APAGAR Y LIMPIAR
+# ============================================================
+
+# Matar el switch p4 (si quedo colgado)
+sudo pkill simple_switch
+
+# Limpiar los restos de Mininet (antes de volver a arrancar desde cero)
+sudo mn -c
