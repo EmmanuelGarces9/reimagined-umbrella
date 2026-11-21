@@ -1,0 +1,2298 @@
+{
+  "header_types" : [
+    {
+      "name" : "scalars_0",
+      "id" : 0,
+      "fields" : [
+        ["tmp", 32, false],
+        ["tmp_0", 32, false],
+        ["tmp_1", 32, false],
+        ["tmp_2", 32, false],
+        ["tmp_3", 32, false],
+        ["tmp_4", 32, false],
+        ["tmp_5", 32, false],
+        ["tmp_6", 32, false],
+        ["tmp_7", 32, false],
+        ["tmp_8", 32, false],
+        ["tmp_9", 32, false],
+        ["port_blocked_0", 1, false],
+        ["discard_0", 1, false],
+        ["tstart_0", 48, false],
+        ["cntr_0", 32, false],
+        ["tstart_1", 48, false],
+        ["cntr_1", 32, false],
+        ["_padding_0", 6, false]
+      ]
+    },
+    {
+      "name" : "standard_metadata",
+      "id" : 1,
+      "fields" : [
+        ["ingress_port", 9, false],
+        ["egress_spec", 9, false],
+        ["egress_port", 9, false],
+        ["instance_type", 32, false],
+        ["packet_length", 32, false],
+        ["enq_timestamp", 32, false],
+        ["enq_qdepth", 19, false],
+        ["deq_timedelta", 32, false],
+        ["deq_qdepth", 19, false],
+        ["ingress_global_timestamp", 48, false],
+        ["egress_global_timestamp", 48, false],
+        ["mcast_grp", 16, false],
+        ["egress_rid", 16, false],
+        ["checksum_error", 1, false],
+        ["parser_error", 32, false],
+        ["priority", 3, false],
+        ["lag_hash", 16, false],
+        ["_padding", 3, false]
+      ]
+    },
+    {
+      "name" : "ethernet_t",
+      "id" : 2,
+      "fields" : [
+        ["dstAddr", 48, false],
+        ["srcAddr", 48, false],
+        ["etherType", 16, false]
+      ]
+    },
+    {
+      "name" : "ipv4_t",
+      "id" : 3,
+      "fields" : [
+        ["version", 4, false],
+        ["hlen", 4, false],
+        ["tos", 8, false],
+        ["totalen", 16, false],
+        ["ID", 16, false],
+        ["flags", 3, false],
+        ["fragOff", 13, false],
+        ["ttl", 8, false],
+        ["protocol", 8, false],
+        ["hdrCheck", 16, false],
+        ["srcIpAddr", 32, false],
+        ["dstIpAddr", 32, false]
+      ]
+    },
+    {
+      "name" : "arp_t",
+      "id" : 4,
+      "fields" : [
+        ["htype", 16, false],
+        ["ptype", 16, false],
+        ["hlen", 8, false],
+        ["plen", 8, false],
+        ["oper", 16, false],
+        ["sha", 48, false],
+        ["spa", 32, false],
+        ["tha", 48, false],
+        ["tpa", 32, false]
+      ]
+    }
+  ],
+  "headers" : [
+    {
+      "name" : "scalars",
+      "id" : 0,
+      "header_type" : "scalars_0",
+      "metadata" : true,
+      "pi_omit" : true
+    },
+    {
+      "name" : "standard_metadata",
+      "id" : 1,
+      "header_type" : "standard_metadata",
+      "metadata" : true,
+      "pi_omit" : true
+    },
+    {
+      "name" : "eth",
+      "id" : 2,
+      "header_type" : "ethernet_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "ipv4",
+      "id" : 3,
+      "header_type" : "ipv4_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "arp",
+      "id" : 4,
+      "header_type" : "arp_t",
+      "metadata" : false,
+      "pi_omit" : true
+    }
+  ],
+  "header_stacks" : [],
+  "header_union_types" : [],
+  "header_unions" : [],
+  "header_union_stacks" : [],
+  "field_lists" : [],
+  "errors" : [
+    ["NoError", 0],
+    ["PacketTooShort", 1],
+    ["NoMatch", 2],
+    ["StackOutOfBounds", 3],
+    ["HeaderTooShort", 4],
+    ["ParserTimeout", 5],
+    ["ParserInvalidArgument", 6]
+  ],
+  "enums" : [],
+  "parsers" : [
+    {
+      "name" : "parser",
+      "id" : 0,
+      "init_state" : "start",
+      "parse_states" : [
+        {
+          "name" : "start",
+          "id" : 0,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "eth"
+                }
+              ],
+              "op" : "extract"
+            }
+          ],
+          "transitions" : [
+            {
+              "type" : "hexstr",
+              "value" : "0x0800",
+              "mask" : null,
+              "next_state" : "parse_ipv4"
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0806",
+              "mask" : null,
+              "next_state" : "parse_arp"
+            },
+            {
+              "type" : "default",
+              "value" : null,
+              "mask" : null,
+              "next_state" : null
+            }
+          ],
+          "transition_key" : [
+            {
+              "type" : "field",
+              "value" : ["eth", "etherType"]
+            }
+          ]
+        },
+        {
+          "name" : "parse_ipv4",
+          "id" : 1,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "ipv4"
+                }
+              ],
+              "op" : "extract"
+            }
+          ],
+          "transitions" : [
+            {
+              "type" : "default",
+              "value" : null,
+              "mask" : null,
+              "next_state" : null
+            }
+          ],
+          "transition_key" : []
+        },
+        {
+          "name" : "parse_arp",
+          "id" : 2,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "arp"
+                }
+              ],
+              "op" : "extract"
+            }
+          ],
+          "transitions" : [
+            {
+              "type" : "default",
+              "value" : null,
+              "mask" : null,
+              "next_state" : null
+            }
+          ],
+          "transition_key" : []
+        }
+      ]
+    }
+  ],
+  "parse_vsets" : [],
+  "deparsers" : [
+    {
+      "name" : "deparser",
+      "id" : 0,
+      "source_info" : {
+        "filename" : "flowMitigation.p4",
+        "line" : 216,
+        "column" : 8,
+        "source_fragment" : "MyDeparser"
+      },
+      "order" : ["eth", "arp", "ipv4"],
+      "primitives" : []
+    }
+  ],
+  "meter_arrays" : [],
+  "counter_arrays" : [],
+  "register_arrays" : [
+    {
+      "name" : "MyIngress.reg_req_count",
+      "id" : 0,
+      "source_info" : {
+        "filename" : "flowMitigation.p4",
+        "line" : 97,
+        "column" : 27,
+        "source_fragment" : "reg_req_count"
+      },
+      "size" : 512,
+      "bitwidth" : 32
+    },
+    {
+      "name" : "MyIngress.reg_req_tstart",
+      "id" : 1,
+      "source_info" : {
+        "filename" : "flowMitigation.p4",
+        "line" : 98,
+        "column" : 26,
+        "source_fragment" : "reg_req_tstart"
+      },
+      "size" : 512,
+      "bitwidth" : 48
+    },
+    {
+      "name" : "MyIngress.reg_rep_count",
+      "id" : 2,
+      "source_info" : {
+        "filename" : "flowMitigation.p4",
+        "line" : 99,
+        "column" : 27,
+        "source_fragment" : "reg_rep_count"
+      },
+      "size" : 512,
+      "bitwidth" : 32
+    },
+    {
+      "name" : "MyIngress.reg_rep_tstart",
+      "id" : 3,
+      "source_info" : {
+        "filename" : "flowMitigation.p4",
+        "line" : 100,
+        "column" : 26,
+        "source_fragment" : "reg_rep_tstart"
+      },
+      "size" : 512,
+      "bitwidth" : 48
+    },
+    {
+      "name" : "MyIngress.reg_blocked",
+      "id" : 4,
+      "source_info" : {
+        "filename" : "flowMitigation.p4",
+        "line" : 101,
+        "column" : 27,
+        "source_fragment" : "reg_blocked"
+      },
+      "size" : 512,
+      "bitwidth" : 1
+    }
+  ],
+  "calculations" : [],
+  "learn_lists" : [],
+  "actions" : [
+    {
+      "name" : "NoAction",
+      "id" : 0,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "MyIngress.drop",
+      "id" : 1,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "mark_to_drop",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "standard_metadata"
+            }
+          ],
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 105,
+            "column" : 8,
+            "source_fragment" : "mark_to_drop(standard_metadata)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.drop",
+      "id" : 2,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "mark_to_drop",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "standard_metadata"
+            }
+          ],
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 105,
+            "column" : 8,
+            "source_fragment" : "mark_to_drop(standard_metadata)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.forward",
+      "id" : 3,
+      "runtime_data" : [
+        {
+          "name" : "port",
+          "bitwidth" : 9
+        }
+      ],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "egress_spec"]
+            },
+            {
+              "type" : "runtime_data",
+              "value" : 0
+            }
+          ],
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 109,
+            "column" : 8,
+            "source_fragment" : "standard_metadata.egress_spec=port"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "flowMitigation136",
+      "id" : 4,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "discard_0"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "bool",
+                    "value" : true
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 136,
+            "column" : 12,
+            "source_fragment" : "discard = true"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "flowMitigation149",
+      "id" : 5,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tstart_0"]
+            },
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "ingress_global_timestamp"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 149,
+            "column" : 20,
+            "source_fragment" : "tstart=actual_t"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "cntr_0"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00000001"
+            }
+          ],
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 150,
+            "column" : 20,
+            "source_fragment" : "cntr=1"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["standard_metadata", "ingress_port"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 151,
+            "column" : 41,
+            "source_fragment" : "index_p"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.reg_req_tstart"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp"]
+            },
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "ingress_global_timestamp"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 151,
+            "column" : 20,
+            "source_fragment" : "reg_req_tstart.write(index_p, tstart)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "flowMitigation154",
+      "id" : 6,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "cntr_0"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "cntr_0"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x00000001"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 154,
+            "column" : 20,
+            "source_fragment" : "cntr = cntr+1"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "flowMitigation145",
+      "id" : 7,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_0"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["standard_metadata", "ingress_port"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 145,
+            "column" : 44,
+            "source_fragment" : "index_p"
+          }
+        },
+        {
+          "op" : "register_read",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tstart_0"]
+            },
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.reg_req_tstart"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_0"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 145,
+            "column" : 16,
+            "source_fragment" : "reg_req_tstart.read(tstart, index_p)"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_1"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["standard_metadata", "ingress_port"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 146,
+            "column" : 41,
+            "source_fragment" : "index_p"
+          }
+        },
+        {
+          "op" : "register_read",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "cntr_0"]
+            },
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.reg_req_count"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_1"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 146,
+            "column" : 16,
+            "source_fragment" : "reg_req_count.read(cntr, index_p)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "flowMitigation158",
+      "id" : 8,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "discard_0"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "bool",
+                    "value" : true
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 158,
+            "column" : 20,
+            "source_fragment" : "discard=true"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_2"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["standard_metadata", "ingress_port"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 159,
+            "column" : 38,
+            "source_fragment" : "index_p"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.reg_blocked"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_2"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x01"
+            }
+          ],
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 159,
+            "column" : 20,
+            "source_fragment" : "reg_blocked.write(index_p, 1)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "flowMitigation156",
+      "id" : 9,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_3"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["standard_metadata", "ingress_port"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 156,
+            "column" : 36,
+            "source_fragment" : "index_p"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.reg_req_count"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_3"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "cntr_0"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 156,
+            "column" : 16,
+            "source_fragment" : "reg_req_count.write(index_p, cntr)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "flowMitigation170",
+      "id" : 10,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tstart_1"]
+            },
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "ingress_global_timestamp"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 170,
+            "column" : 20,
+            "source_fragment" : "tstart=actual_t"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "cntr_1"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00000001"
+            }
+          ],
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 171,
+            "column" : 20,
+            "source_fragment" : "cntr=1"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_4"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["standard_metadata", "ingress_port"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 172,
+            "column" : 41,
+            "source_fragment" : "index_p"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.reg_rep_tstart"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_4"]
+            },
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "ingress_global_timestamp"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 172,
+            "column" : 20,
+            "source_fragment" : "reg_rep_tstart.write(index_p, tstart)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "flowMitigation175",
+      "id" : 11,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "cntr_1"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "cntr_1"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x00000001"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 175,
+            "column" : 20,
+            "source_fragment" : "cntr = cntr+1"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "flowMitigation166",
+      "id" : 12,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_5"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["standard_metadata", "ingress_port"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 166,
+            "column" : 44,
+            "source_fragment" : "index_p"
+          }
+        },
+        {
+          "op" : "register_read",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tstart_1"]
+            },
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.reg_rep_tstart"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_5"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 166,
+            "column" : 16,
+            "source_fragment" : "reg_rep_tstart.read(tstart, index_p)"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_6"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["standard_metadata", "ingress_port"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 167,
+            "column" : 41,
+            "source_fragment" : "index_p"
+          }
+        },
+        {
+          "op" : "register_read",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "cntr_1"]
+            },
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.reg_rep_count"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_6"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 167,
+            "column" : 16,
+            "source_fragment" : "reg_rep_count.read(cntr, index_p)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "flowMitigation179",
+      "id" : 13,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "discard_0"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "bool",
+                    "value" : true
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 179,
+            "column" : 20,
+            "source_fragment" : "discard=true"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_7"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["standard_metadata", "ingress_port"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 180,
+            "column" : 38,
+            "source_fragment" : "index_p"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.reg_blocked"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_7"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x01"
+            }
+          ],
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 180,
+            "column" : 20,
+            "source_fragment" : "reg_blocked.write(index_p, 1)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "flowMitigation177",
+      "id" : 14,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_8"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["standard_metadata", "ingress_port"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 177,
+            "column" : 36,
+            "source_fragment" : "index_p"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.reg_rep_count"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_8"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "cntr_1"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 177,
+            "column" : 16,
+            "source_fragment" : "reg_rep_count.write(index_p, cntr)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "flowMitigation130",
+      "id" : 15,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_9"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["standard_metadata", "ingress_port"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 130,
+            "column" : 39,
+            "source_fragment" : "index_p"
+          }
+        },
+        {
+          "op" : "register_read",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "port_blocked_0"]
+            },
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.reg_blocked"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_9"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 130,
+            "column" : 8,
+            "source_fragment" : "reg_blocked.read(port_blocked, index_p)"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "discard_0"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "bool",
+                    "value" : false
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 132,
+            "column" : 13,
+            "source_fragment" : "discard = false"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "flowMitigation191",
+      "id" : 16,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "mcast_grp"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0001"
+            }
+          ],
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 191,
+            "column" : 12,
+            "source_fragment" : "standard_metadata.mcast_grp=1"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "flowMitigation204",
+      "id" : 17,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "mark_to_drop",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "standard_metadata"
+            }
+          ],
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 204,
+            "column" : 12,
+            "source_fragment" : "mark_to_drop(standard_metadata)"
+          }
+        }
+      ]
+    }
+  ],
+  "pipelines" : [
+    {
+      "name" : "ingress",
+      "id" : 0,
+      "source_info" : {
+        "filename" : "flowMitigation.p4",
+        "line" : 93,
+        "column" : 8,
+        "source_fragment" : "MyIngress"
+      },
+      "init_table" : "tbl_flowMitigation130",
+      "tables" : [
+        {
+          "name" : "tbl_flowMitigation130",
+          "id" : 0,
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 130,
+            "column" : 8,
+            "source_fragment" : "reg_blocked.read(port_blocked, index_p); ..."
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [15],
+          "actions" : ["flowMitigation130"],
+          "base_default_next" : "node_3",
+          "next_tables" : {
+            "flowMitigation130" : "node_3"
+          },
+          "default_entry" : {
+            "action_id" : 15,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_flowMitigation136",
+          "id" : 1,
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 136,
+            "column" : 20,
+            "source_fragment" : "="
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [4],
+          "actions" : ["flowMitigation136"],
+          "base_default_next" : "node_22",
+          "next_tables" : {
+            "flowMitigation136" : "node_22"
+          },
+          "default_entry" : {
+            "action_id" : 4,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_flowMitigation145",
+          "id" : 2,
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 145,
+            "column" : 16,
+            "source_fragment" : "reg_req_tstart.read(tstart, index_p); ..."
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [7],
+          "actions" : ["flowMitigation145"],
+          "base_default_next" : "node_8",
+          "next_tables" : {
+            "flowMitigation145" : "node_8"
+          },
+          "default_entry" : {
+            "action_id" : 7,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_flowMitigation149",
+          "id" : 3,
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 149,
+            "column" : 26,
+            "source_fragment" : "=actual_t; ..."
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [5],
+          "actions" : ["flowMitigation149"],
+          "base_default_next" : "tbl_flowMitigation156",
+          "next_tables" : {
+            "flowMitigation149" : "tbl_flowMitigation156"
+          },
+          "default_entry" : {
+            "action_id" : 5,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_flowMitigation154",
+          "id" : 4,
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 154,
+            "column" : 25,
+            "source_fragment" : "="
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [6],
+          "actions" : ["flowMitigation154"],
+          "base_default_next" : "tbl_flowMitigation156",
+          "next_tables" : {
+            "flowMitigation154" : "tbl_flowMitigation156"
+          },
+          "default_entry" : {
+            "action_id" : 6,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_flowMitigation156",
+          "id" : 5,
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 156,
+            "column" : 16,
+            "source_fragment" : "reg_req_count.write(index_p, cntr)"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [9],
+          "actions" : ["flowMitigation156"],
+          "base_default_next" : "node_12",
+          "next_tables" : {
+            "flowMitigation156" : "node_12"
+          },
+          "default_entry" : {
+            "action_id" : 9,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_flowMitigation158",
+          "id" : 6,
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 158,
+            "column" : 27,
+            "source_fragment" : "=true; ..."
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [8],
+          "actions" : ["flowMitigation158"],
+          "base_default_next" : "node_22",
+          "next_tables" : {
+            "flowMitigation158" : "node_22"
+          },
+          "default_entry" : {
+            "action_id" : 8,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_flowMitigation166",
+          "id" : 7,
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 166,
+            "column" : 16,
+            "source_fragment" : "reg_rep_tstart.read(tstart, index_p); ..."
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [12],
+          "actions" : ["flowMitigation166"],
+          "base_default_next" : "node_16",
+          "next_tables" : {
+            "flowMitigation166" : "node_16"
+          },
+          "default_entry" : {
+            "action_id" : 12,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_flowMitigation170",
+          "id" : 8,
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 170,
+            "column" : 26,
+            "source_fragment" : "=actual_t; ..."
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [10],
+          "actions" : ["flowMitigation170"],
+          "base_default_next" : "tbl_flowMitigation177",
+          "next_tables" : {
+            "flowMitigation170" : "tbl_flowMitigation177"
+          },
+          "default_entry" : {
+            "action_id" : 10,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_flowMitigation175",
+          "id" : 9,
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 175,
+            "column" : 25,
+            "source_fragment" : "="
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [11],
+          "actions" : ["flowMitigation175"],
+          "base_default_next" : "tbl_flowMitigation177",
+          "next_tables" : {
+            "flowMitigation175" : "tbl_flowMitigation177"
+          },
+          "default_entry" : {
+            "action_id" : 11,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_flowMitigation177",
+          "id" : 10,
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 177,
+            "column" : 16,
+            "source_fragment" : "reg_rep_count.write(index_p, cntr)"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [14],
+          "actions" : ["flowMitigation177"],
+          "base_default_next" : "node_20",
+          "next_tables" : {
+            "flowMitigation177" : "node_20"
+          },
+          "default_entry" : {
+            "action_id" : 14,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_flowMitigation179",
+          "id" : 11,
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 179,
+            "column" : 27,
+            "source_fragment" : "=true; ..."
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [13],
+          "actions" : ["flowMitigation179"],
+          "base_default_next" : "node_22",
+          "next_tables" : {
+            "flowMitigation179" : "node_22"
+          },
+          "default_entry" : {
+            "action_id" : 13,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_drop",
+          "id" : 12,
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 188,
+            "column" : 12,
+            "source_fragment" : "drop()"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [2],
+          "actions" : ["MyIngress.drop"],
+          "base_default_next" : null,
+          "next_tables" : {
+            "MyIngress.drop" : null
+          },
+          "default_entry" : {
+            "action_id" : 2,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_flowMitigation191",
+          "id" : 13,
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 191,
+            "column" : 39,
+            "source_fragment" : "="
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [16],
+          "actions" : ["flowMitigation191"],
+          "base_default_next" : null,
+          "next_tables" : {
+            "flowMitigation191" : null
+          },
+          "default_entry" : {
+            "action_id" : 16,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "MyIngress.mac_forw",
+          "id" : 14,
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 113,
+            "column" : 10,
+            "source_fragment" : "mac_forw"
+          },
+          "key" : [
+            {
+              "match_type" : "exact",
+              "name" : "hdr.eth.dstAddr",
+              "target" : ["eth", "dstAddr"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [3, 1, 0],
+          "actions" : ["MyIngress.forward", "MyIngress.drop", "NoAction"],
+          "base_default_next" : null,
+          "next_tables" : {
+            "MyIngress.forward" : null,
+            "MyIngress.drop" : null,
+            "NoAction" : null
+          },
+          "default_entry" : {
+            "action_id" : 1,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        }
+      ],
+      "action_profiles" : [],
+      "conditionals" : [
+        {
+          "name" : "node_3",
+          "id" : 0,
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 135,
+            "column" : 12,
+            "source_fragment" : "port_blocked == 1"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "==",
+              "left" : {
+                "type" : "field",
+                "value" : ["scalars", "port_blocked_0"]
+              },
+              "right" : {
+                "type" : "hexstr",
+                "value" : "0x01"
+              }
+            }
+          },
+          "true_next" : "tbl_flowMitigation136",
+          "false_next" : "node_5"
+        },
+        {
+          "name" : "node_5",
+          "id" : 1,
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 139,
+            "column" : 17,
+            "source_fragment" : "hdr.arp.isValid()"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "d2b",
+              "left" : null,
+              "right" : {
+                "type" : "field",
+                "value" : ["arp", "$valid$"]
+              }
+            }
+          },
+          "true_next" : "node_6",
+          "false_next" : "node_22"
+        },
+        {
+          "name" : "node_6",
+          "id" : 2,
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 142,
+            "column" : 16,
+            "source_fragment" : "hdr.arp.oper==1"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "==",
+              "left" : {
+                "type" : "field",
+                "value" : ["arp", "oper"]
+              },
+              "right" : {
+                "type" : "hexstr",
+                "value" : "0x0001"
+              }
+            }
+          },
+          "true_next" : "tbl_flowMitigation145",
+          "false_next" : "node_14"
+        },
+        {
+          "name" : "node_8",
+          "id" : 3,
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 148,
+            "column" : 20,
+            "source_fragment" : "actual_t - tstart > REQ_W"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : ">",
+              "left" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "-",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["standard_metadata", "ingress_global_timestamp"]
+                      },
+                      "right" : {
+                        "type" : "field",
+                        "value" : ["scalars", "tstart_0"]
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffffffff"
+                  }
+                }
+              },
+              "right" : {
+                "type" : "hexstr",
+                "value" : "0x0000000f4240"
+              }
+            }
+          },
+          "true_next" : "tbl_flowMitigation149",
+          "false_next" : "tbl_flowMitigation154"
+        },
+        {
+          "name" : "node_12",
+          "id" : 4,
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 157,
+            "column" : 20,
+            "source_fragment" : "cntr>REQ_TH"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : ">",
+              "left" : {
+                "type" : "field",
+                "value" : ["scalars", "cntr_0"]
+              },
+              "right" : {
+                "type" : "hexstr",
+                "value" : "0x0000000a"
+              }
+            }
+          },
+          "true_next" : "tbl_flowMitigation158",
+          "false_next" : "node_22"
+        },
+        {
+          "name" : "node_14",
+          "id" : 5,
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 163,
+            "column" : 21,
+            "source_fragment" : "hdr.arp.oper == 2"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "==",
+              "left" : {
+                "type" : "field",
+                "value" : ["arp", "oper"]
+              },
+              "right" : {
+                "type" : "hexstr",
+                "value" : "0x0002"
+              }
+            }
+          },
+          "true_next" : "tbl_flowMitigation166",
+          "false_next" : "node_22"
+        },
+        {
+          "name" : "node_16",
+          "id" : 6,
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 169,
+            "column" : 20,
+            "source_fragment" : "actual_t - tstart > REP_W"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : ">",
+              "left" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "-",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["standard_metadata", "ingress_global_timestamp"]
+                      },
+                      "right" : {
+                        "type" : "field",
+                        "value" : ["scalars", "tstart_1"]
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffffffff"
+                  }
+                }
+              },
+              "right" : {
+                "type" : "hexstr",
+                "value" : "0x000000e4e1c0"
+              }
+            }
+          },
+          "true_next" : "tbl_flowMitigation170",
+          "false_next" : "tbl_flowMitigation175"
+        },
+        {
+          "name" : "node_20",
+          "id" : 7,
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 178,
+            "column" : 20,
+            "source_fragment" : "cntr>REP_TH"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : ">",
+              "left" : {
+                "type" : "field",
+                "value" : ["scalars", "cntr_1"]
+              },
+              "right" : {
+                "type" : "hexstr",
+                "value" : "0x00000006"
+              }
+            }
+          },
+          "true_next" : "tbl_flowMitigation179",
+          "false_next" : "node_22"
+        },
+        {
+          "name" : "node_22",
+          "id" : 8,
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 187,
+            "column" : 12,
+            "source_fragment" : "discard"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "d2b",
+              "left" : null,
+              "right" : {
+                "type" : "field",
+                "value" : ["scalars", "discard_0"]
+              }
+            }
+          },
+          "true_next" : "tbl_drop",
+          "false_next" : "node_24"
+        },
+        {
+          "name" : "node_24",
+          "id" : 9,
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 190,
+            "column" : 17,
+            "source_fragment" : "hdr.eth.dstAddr==bcast"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "==",
+              "left" : {
+                "type" : "field",
+                "value" : ["eth", "dstAddr"]
+              },
+              "right" : {
+                "type" : "hexstr",
+                "value" : "0xffffffffffff"
+              }
+            }
+          },
+          "true_next" : "tbl_flowMitigation191",
+          "false_next" : "MyIngress.mac_forw"
+        }
+      ]
+    },
+    {
+      "name" : "egress",
+      "id" : 1,
+      "source_info" : {
+        "filename" : "flowMitigation.p4",
+        "line" : 200,
+        "column" : 8,
+        "source_fragment" : "MyEgress"
+      },
+      "init_table" : "node_29",
+      "tables" : [
+        {
+          "name" : "tbl_flowMitigation204",
+          "id" : 15,
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 204,
+            "column" : 12,
+            "source_fragment" : "mark_to_drop(standard_metadata)"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [17],
+          "actions" : ["flowMitigation204"],
+          "base_default_next" : null,
+          "next_tables" : {
+            "flowMitigation204" : null
+          },
+          "default_entry" : {
+            "action_id" : 17,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        }
+      ],
+      "action_profiles" : [],
+      "conditionals" : [
+        {
+          "name" : "node_29",
+          "id" : 10,
+          "source_info" : {
+            "filename" : "flowMitigation.p4",
+            "line" : 203,
+            "column" : 12,
+            "source_fragment" : "standard_metadata.egress_port==standard_metadata.ingress_port"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "==",
+              "left" : {
+                "type" : "field",
+                "value" : ["standard_metadata", "egress_port"]
+              },
+              "right" : {
+                "type" : "field",
+                "value" : ["standard_metadata", "ingress_port"]
+              }
+            }
+          },
+          "false_next" : null,
+          "true_next" : "tbl_flowMitigation204"
+        }
+      ]
+    }
+  ],
+  "checksums" : [],
+  "force_arith" : [],
+  "extern_instances" : [],
+  "field_aliases" : [
+    [
+      "queueing_metadata.enq_timestamp",
+      ["standard_metadata", "enq_timestamp"]
+    ],
+    [
+      "queueing_metadata.enq_qdepth",
+      ["standard_metadata", "enq_qdepth"]
+    ],
+    [
+      "queueing_metadata.deq_timedelta",
+      ["standard_metadata", "deq_timedelta"]
+    ],
+    [
+      "queueing_metadata.deq_qdepth",
+      ["standard_metadata", "deq_qdepth"]
+    ],
+    [
+      "intrinsic_metadata.ingress_global_timestamp",
+      ["standard_metadata", "ingress_global_timestamp"]
+    ],
+    [
+      "intrinsic_metadata.egress_global_timestamp",
+      ["standard_metadata", "egress_global_timestamp"]
+    ],
+    [
+      "intrinsic_metadata.mcast_grp",
+      ["standard_metadata", "mcast_grp"]
+    ],
+    [
+      "intrinsic_metadata.egress_rid",
+      ["standard_metadata", "egress_rid"]
+    ],
+    [
+      "intrinsic_metadata.priority",
+      ["standard_metadata", "priority"]
+    ],
+    [
+      "intrinsic_metadata.lag_hash",
+      ["standard_metadata", "lag_hash"]
+    ]
+  ],
+  "program" : "flowMitigation.p4",
+  "__meta__" : {
+    "version" : [2, 23],
+    "compiler" : "https://github.com/p4lang/p4c"
+  }
+}

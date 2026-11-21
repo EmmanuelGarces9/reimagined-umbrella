@@ -1,0 +1,136 @@
+# proto-file: p4/config/v1/p4info.proto
+# proto-message: p4.config.v1.P4Info
+
+pkg_info {
+  arch: "v1model"
+}
+tables {
+  preamble {
+    id: 37636568
+    name: "MyIngress.mac_forw"
+    alias: "mac_forw"
+  }
+  match_fields {
+    id: 1
+    name: "hdr.eth.dstAddr"
+    bitwidth: 48
+    match_type: EXACT
+  }
+  action_refs {
+    id: 29683729
+  }
+  action_refs {
+    id: 25652968
+  }
+  action_refs {
+    id: 21257015
+  }
+  initial_default_action {
+    action_id: 25652968
+  }
+  size: 1024
+}
+actions {
+  preamble {
+    id: 21257015
+    name: "NoAction"
+    alias: "NoAction"
+    annotations: "@noWarn(\"unused\")"
+  }
+}
+actions {
+  preamble {
+    id: 25652968
+    name: "MyIngress.drop"
+    alias: "drop"
+  }
+}
+actions {
+  preamble {
+    id: 29683729
+    name: "MyIngress.forward"
+    alias: "forward"
+  }
+  params {
+    id: 1
+    name: "port"
+    bitwidth: 9
+  }
+}
+registers {
+  preamble {
+    id: 378764277
+    name: "MyIngress.reg_req_count"
+    alias: "reg_req_count"
+  }
+  type_spec {
+    bitstring {
+      bit {
+        bitwidth: 32
+      }
+    }
+  }
+  size: 512
+}
+registers {
+  preamble {
+    id: 371015127
+    name: "MyIngress.reg_req_tstart"
+    alias: "reg_req_tstart"
+  }
+  type_spec {
+    bitstring {
+      bit {
+        bitwidth: 48
+      }
+    }
+  }
+  size: 512
+}
+registers {
+  preamble {
+    id: 385872602
+    name: "MyIngress.reg_rep_count"
+    alias: "reg_rep_count"
+  }
+  type_spec {
+    bitstring {
+      bit {
+        bitwidth: 32
+      }
+    }
+  }
+  size: 512
+}
+registers {
+  preamble {
+    id: 371109261
+    name: "MyIngress.reg_rep_tstart"
+    alias: "reg_rep_tstart"
+  }
+  type_spec {
+    bitstring {
+      bit {
+        bitwidth: 48
+      }
+    }
+  }
+  size: 512
+}
+registers {
+  preamble {
+    id: 374867577
+    name: "MyIngress.reg_blocked"
+    alias: "reg_blocked"
+  }
+  type_spec {
+    bitstring {
+      bit {
+        bitwidth: 1
+      }
+    }
+  }
+  size: 512
+}
+type_info {
+}
