@@ -4,3 +4,6 @@
 **/*.swp
 **/*.pyc
 **/.git/
+*.log
+build/
+logs/
