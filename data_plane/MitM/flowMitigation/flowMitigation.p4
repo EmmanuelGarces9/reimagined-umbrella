@@ -16,8 +16,7 @@ const time_t REP_W = 15000000; //measured in us
 //const bit<> REP_W = 30000000; //measured in us
 const count_t REP_TH = 6; //measured in units
 //const bit<> REP_TH = 10; //measured in units
-
-
+const bit<9> SERVER_PORT = 1;
 
 header ethernet_t {
     bit<48> dstAddr;
@@ -136,7 +135,7 @@ control MyIngress(inout headers hdr,
             discard = true;
         }
 
-        else if (hdr.arp.isValid()) {
+        else if (hdr.arp.isValid() && standard_metadata.ingress_port != SERVER_PORT) {
             time_t actual_t = standard_metadata.ingress_global_timestamp;
             
             if (hdr.arp.oper==1){
