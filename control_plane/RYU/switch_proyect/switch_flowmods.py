@@ -40,5 +40,5 @@ class switch_flowmod(app_manager.RyuApp):
         dp.send_msg(mod)
 
 
-       self.logger.info("Switch %s conectado, instalando reglas", dp.id)
+        self.logger.info("Switch %s conectado, instalando reglas", dp.id)
    
