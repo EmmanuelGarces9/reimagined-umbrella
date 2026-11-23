@@ -96,7 +96,7 @@ control MyIngress(inout headers hdr,
 
     register<count_t>(512) reg_req_count;      // request counter register
     register<time_t>(512) reg_req_tstart;       // request time register
-    register<count_t>(512) reg_rep_count;     // replies cntr register
+    register<count_t>(512) reg_rep_count;     // replies counter register
     register<time_t>(512) reg_rep_tstart; //replies time register
     register<valid_t>(512) reg_blocked;  // ports blocked register
 
